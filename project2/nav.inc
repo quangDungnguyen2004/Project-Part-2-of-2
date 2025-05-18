@@ -25,7 +25,7 @@
         </div>
     </div>
         <div class="left-selections">
-            <div class="signin-button">SIGN IN</div>
+            <div class="signin-button">LOG IN</div>
             <div class="download-button">DOWNLOAD</div>
         </div>
     </nav>

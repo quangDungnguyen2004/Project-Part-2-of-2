@@ -15,3 +15,10 @@
     <title>Manage</title>
 </head>
 <body>
+    <?php
+        include "nav.inc";
+    ?>
+    
+    <?php
+        include "footer.inc";
+    ?>
