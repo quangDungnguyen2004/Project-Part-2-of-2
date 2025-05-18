@@ -493,7 +493,7 @@ figure {
 .apply-button {
     margin: 40px auto 40px auto; /* Center horizontally and add vertical spacing */
     padding: 20px 0;
-    width: 210px;
+    width: 100%;
     text-align: center; /* Center the button text */
     font-size: 24px; /* Adjust font size as needed */
     color: #0A0707;

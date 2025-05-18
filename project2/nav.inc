@@ -13,7 +13,7 @@
             <a href="mailto:info@earthlingai.com.au" class="contact-us">CONTACT US</a>
         </div>
     <div class="hidden-menu">
-        <img src="images/dropdownbutton.png" alt="drop down button">
+        <img src="../images/dropdownbutton.png" alt="drop down button">
         <div class="dropdown-content">
             <ul>
                 <li><a href="about.php" class="about-us">ABOUT US</a></li>

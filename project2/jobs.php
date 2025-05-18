@@ -1,3 +1,10 @@
+<?php
+    session_start();
+    
+    error_reporting(E_ALL);
+    ini_set('display_errors', 1);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,9 +24,9 @@
                 <div class="title-wrapper">
                     <h1>Featured roles</h1>
                 </div>
-                <div class="apply-button">
-                    <a href="apply.html">Apply now ➜</a>
-                </div>
+                <form action="process_eoi.php" method="post">
+                    <button class="apply-button" type="submit">Apply now ➜</button>
+                </form>
             </section>
             <section>
                 <div class="job-grid">
