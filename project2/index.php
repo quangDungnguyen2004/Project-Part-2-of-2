@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +8,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Geist+Mono&display=swap" rel="stylesheet">
     <title>Home Page</title>
 </head>
+
 <body>
     <?php
-        include "nav.inc";
+    include "header.inc";
     ?>
     <main class="main">
         <div class="top-part">
@@ -21,15 +23,18 @@
         </div>
         <div class="overview">
             <div>
-                <p class="image-title">It's a <span id="partner">partner</span> who always stands by your side on creative projects, from initial brainstorming to final editing.</p>
+                <p class="image-title">It's a <span id="partner">partner</span> who always stands by your side on
+                    creative projects, from initial brainstorming to final editing.</p>
                 <img class="overview-images" src="../images/storyprompt.png" alt="Story Prompt">
             </div>
             <div>
-                <p class="image-title">A <span id="tutor">tutor</span> who helps you turn your own ideas into working code.</p>
+                <p class="image-title">A <span id="tutor">tutor</span> who helps you turn your own ideas into working
+                    code.</p>
                 <img class="overview-images" src="../images/codeprompt.png" alt="Code Prompt">
             </div>
             <div>
-                <p class="image-title">Whether you have a simple idea or a detailed description, it can create an image to match your needs.</p>
+                <p class="image-title">Whether you have a simple idea or a detailed description, it can create an image
+                    to match your needs.</p>
                 <img class="overview-images" src="../images/imageprompt.png" alt="Image Prompt">
             </div>
             <div class="see-more">Explore more features of Earthling AI</div>
@@ -58,9 +63,10 @@
         </div>
     </main>
     <?php
-        include "footer.inc";
+    include "footer.inc";
     ?>
 </body>
+
 </html>
 <!--
 AI prompt used

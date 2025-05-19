@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +8,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Geist+Mono&display=swap" rel="stylesheet">
     <title>Application Form</title>
 </head>
+
 <body>
     <?php
-        include "nav.inc";
+    include "header.inc";
     ?>
     <main class="main">
         <div class="form-wrapper">
@@ -31,12 +33,16 @@
                     <div class="input-block">
                         <!-- First name -->
                         <label for="fname">First Name</label>
-                        <input type="text" id="fname" name="first_name" maxlength="20" pattern="^[A-Za-z]{1,20}$" placeholder="Type here..." autocomplete="given-name" required title="First name must contain only letters (A-Z), max 20 characters.">
+                        <input type="text" id="fname" name="first_name" maxlength="20" pattern="^[A-Za-z]{1,20}$"
+                            placeholder="Type here..." autocomplete="given-name" required
+                            title="First name must contain only letters (A-Z), max 20 characters.">
                     </div>
                     <div class="input-block">
                         <!-- Last name -->
                         <label for="lname">Last Name</label>
-                        <input type="text" id="lname" name="last_name" maxlength="20" pattern="^[A-Za-z]{1,20}$" placeholder="Type here..." autocomplete="family-name" required title="Last name must contain only letters (A-Z), max 20 characters.">
+                        <input type="text" id="lname" name="last_name" maxlength="20" pattern="^[A-Za-z]{1,20}$"
+                            placeholder="Type here..." autocomplete="family-name" required
+                            title="Last name must contain only letters (A-Z), max 20 characters.">
                     </div>
                     <div class="input-block">
                         <!-- Date of Birth -->
@@ -70,17 +76,22 @@
                         <div class="address-option">
                             <!-- Street address -->
                             <label for="street">Street Address</label>
-                            <input type="text" id="street" name="street" maxlength="40" placeholder="Enter your street address" required>
+                            <input type="text" id="street" name="street" maxlength="40"
+                                placeholder="Enter your street address" required>
                         </div>
                         <div class="address-option">
                             <!-- Suburb/Town -->
                             <label for="suburb">Suburb/Town</label>
-                            <input type="text" id="suburb" name="suburb" maxlength="40" placeholder="Enter your suburb/town" required>
+                            <input type="text" id="suburb" name="suburb" maxlength="40"
+                                placeholder="Enter your suburb/town" required>
                         </div>
                         <div class="address-option">
                             <!-- Postcode -->
                             <label for="postcode">Postcode</label>
-                            <input type="text" id="postcode" name="postcode" maxlength="4" pattern="020\d|02[1-9]\d|0[3-9]\d{2}|[1-8]\d{3}|9[0-8]\d{2}|99[0-3]\d|994[0-4]" placeholder="Enter your postcode" required title="Please enter a valid 4-digit Australian postcode between 0200 and 9944">
+                            <input type="text" id="postcode" name="postcode" maxlength="4"
+                                pattern="020\d|02[1-9]\d|0[3-9]\d{2}|[1-8]\d{3}|9[0-8]\d{2}|99[0-3]\d|994[0-4]"
+                                placeholder="Enter your postcode" required
+                                title="Please enter a valid 4-digit Australian postcode between 0200 and 9944">
                         </div>
                         <div class="address-option">
                             <!-- State -->
@@ -102,13 +113,16 @@
                 <div class="input-block">
                     <!-- Email -->
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="Enter your email" autocomplete="email" required>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" autocomplete="email"
+                        required>
                 </div>
                 <div class="input-block">
                     <!-- Phone number -->
                     <label for="phone">Phone Number</label>
                     <!--Pattern from 3Widgets.com Regex generator-->
-                    <input type="tel" id="phone" name="phone_number" maxlength="12" pattern="04[0-9]{2} [0-9]{3} [0-9]{3}" placeholder="0412 345 678" title="Format: 0412 345 678" autocomplete="tel" required>
+                    <input type="tel" id="phone" name="phone_number" maxlength="12"
+                        pattern="04[0-9]{2} [0-9]{3} [0-9]{3}" placeholder="0412 345 678" title="Format: 0412 345 678"
+                        autocomplete="tel" required>
                 </div>
                 <div class="input-block">
                     <fieldset class="skills-section" required>
@@ -139,7 +153,8 @@
                 <div class="input-block">
                     <!-- Other skills -->
                     <label for="other_skills">Other Skills</label>
-                    <textarea id="other_skills" name="other_skills" rows="4" cols="40" placeholder="List any other skills"></textarea>
+                    <textarea id="other_skills" name="other_skills" rows="4" cols="40"
+                        placeholder="List any other skills"></textarea>
                 </div>
                 <div class="input-block">
                     <input class="left-button" type="reset" value="Reset">
@@ -149,9 +164,10 @@
         </div>
     </main>
     <?php
-        include "footer.inc";
+    include "footer.inc";
     ?>
 </body>
+
 </html>
 <!--
 Pattern for postcode and phone number were taken from 3widgets.com

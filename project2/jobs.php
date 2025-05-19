@@ -1,12 +1,13 @@
 <?php
-    session_start();
-    
-    error_reporting(E_ALL);
-    ini_set('display_errors', 1);
+session_start();
+
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,9 +15,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Geist+Mono&display=swap" rel="stylesheet">
     <title>Job Page</title>
 </head>
+
 <body>
     <?php
-        include "nav.inc";
+    include "header.inc";
     ?>
     <main class="main">
         <div class="mid-part">
@@ -33,14 +35,17 @@
 
                     <div class="job-box">
                         <h3>AI/ML Engineer (Foundational Models)</h3>
-                        <p class="interest-title">📍Melbourne CBD / Hybrid<br><br>Join our core AI research team to develop scalable, general-purpose models that power the next generation of intelligent systems.</p>
-                        
+                        <p class="interest-title">📍Melbourne CBD / Hybrid<br><br>Join our core AI research team to
+                            develop scalable, general-purpose models that power the next generation of intelligent
+                            systems.</p>
+
                         <p class="opportunity-details"><strong>Opportunity details</strong></p>
                         <p><strong>Salary Range:</strong> $110,000 - $140,000 per annum</p>
                         <p><strong>Expected Hours:</strong> Full-time, 38 - 40 hours/week</p>
                         <p><strong>Key Requirements:</strong></p>
                         <ol>
-                            <li>3+ years experience in ML model development, preferably with Transformers or Deep RL</li>
+                            <li>3+ years experience in ML model development, preferably with Transformers or Deep RL
+                            </li>
                             <li>Strong background in Python, PyTorch, and large-scale data processing</li>
                             <li>Familiarity with distributed training, vector databases, or LLM fine-tuning</li>
                         </ol>
@@ -55,8 +60,9 @@
 
                     <div class="job-box">
                         <h3>Data Engineer</h3>
-                        <p class="interest-title">📍Sydney, NSW<br><br>We're looking for a Data Engineer to design, build, and maintain scalable data pipelines and infrastructure for our AI systems.</p>
-                        
+                        <p class="interest-title">📍Sydney, NSW<br><br>We're looking for a Data Engineer to design,
+                            build, and maintain scalable data pipelines and infrastructure for our AI systems.</p>
+
                         <p class="opportunity-details"><strong>Opportunity details</strong></p>
                         <p><strong>Salary Range:</strong> $95,000 - $115,000 per annum</p>
                         <p><strong>Expected Hours:</strong> Full-time, 38 - 40 hours/week</p>
@@ -77,8 +83,10 @@
 
                     <div class="job-box">
                         <h3>Frontend Developer (AI Interfaces)</h3>
-                        <p class="interest-title">📍Remote / Sydney HQ<br><br>We're looking for a creative frontend developer to craft beautiful, intuitive UIs that bring cutting-edge AI capabilities to life for users and enterprises.</p>
-                        
+                        <p class="interest-title">📍Remote / Sydney HQ<br><br>We're looking for a creative frontend
+                            developer to craft beautiful, intuitive UIs that bring cutting-edge AI capabilities to life
+                            for users and enterprises.</p>
+
                         <p class="opportunity-details"><strong>Opportunity details</strong></p>
                         <p><strong>Salary Range:</strong> $90,000 - $115,000 per annum</p>
                         <p><strong>Expected Hours:</strong> Full-time, 37 - 40 hours/week</p>
@@ -99,8 +107,10 @@
 
                     <div class="job-box">
                         <h3>Business Analyst (AI Solutions)</h3>
-                        <p class="interest-title">📍Melbourne or Hybrid<br><br>As a Business Analyst, you'll bridge the gap between AI technical teams and business stakeholders, ensuring the delivery of impactful data-driven solutions.</p>
-                        
+                        <p class="interest-title">📍Melbourne or Hybrid<br><br>As a Business Analyst, you'll bridge the
+                            gap between AI technical teams and business stakeholders, ensuring the delivery of impactful
+                            data-driven solutions.</p>
+
                         <p class="opportunity-details"><strong>Opportunity details</strong></p>
                         <p><strong>Salary Range:</strong> $85,000 - $110,000 per annum</p>
                         <p><strong>Expected Hours:</strong> Full-time, 38 hours/week</p>
@@ -144,9 +154,10 @@
         <aside>Latest update: 4/14/2025</aside>
     </div>
     <?php
-        include "footer.inc";
+    include "footer.inc";
     ?>
 </body>
+
 </html>
 <!--
 AI prompt used

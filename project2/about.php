@@ -1,12 +1,13 @@
 <?php
-    session_start();
-    
-    error_reporting(E_ALL);
-    ini_set('display_errors', 1);
+session_start();
+
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,9 +15,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Geist+Mono&display=swap" rel="stylesheet">
     <title>About Page</title>
 </head>
+
 <body>
     <?php
-        include "nav.inc";
+    include "header.inc";
     ?>
     <main class="main">
         <div class="top-part">
@@ -26,8 +28,10 @@
             <img id="top-image" src="../images/pinktree.png" alt="tree image">
             <div class="product-purpose3">
                 <h1>Invent what's next—responsibly.</h1>
-                <p class="after-purpose-text1">We're building AI that elevates people and society, and we're looking for creative, mission-driven individuals to help lead the way.</p>
-                <p class="after-purpose-text2">Values: These values reflect what we stand for. They guide our decisions, shape our culture, and help us build AI with purpose.</p>
+                <p class="after-purpose-text1">We're building AI that elevates people and society, and we're looking for
+                    creative, mission-driven individuals to help lead the way.</p>
+                <p class="after-purpose-text2">Values: These values reflect what we stand for. They guide our decisions,
+                    shape our culture, and help us build AI with purpose.</p>
                 <p class="after-purpose-text3">Bold, Responsible Innovation. We move fas...</p>
                 <div class="see-more">See more</div>
             </div>
@@ -70,9 +74,11 @@
                     <tr>
                         <td colspan="2">
                             <ul>
-                                <li>Hien Long Dang: Home Page, Team Page, CSS, Job description Page, update Github, update Jira</li>
+                                <li>Hien Long Dang: Home Page, Team Page, CSS, Job description Page, update Github,
+                                    update Jira</li>
                                 <li>Quoc Tri Nguyen: Home Page, Team Page, CSS, Designer, manage Github</li>
-                                <li>Quang Dung Nguyen: Home Page, Team Page, CSS, Job application Page, manage Github, manage Jira</li>
+                                <li>Quang Dung Nguyen: Home Page, Team Page, CSS, Job application Page, manage Github,
+                                    manage Jira</li>
                             </ul>
                         </td>
                     </tr>
@@ -82,7 +88,9 @@
 
         <div class="about-last-part">
             <table class="interests-table">
-                <caption><h2><strong>Group Member Interests</strong></h2></caption>
+                <caption>
+                    <h2><strong>Group Member Interests</strong></h2>
+                </caption>
                 <thead>
                     <tr>
                         <th>Name</th>
@@ -115,9 +123,10 @@
         </div>
     </main>
     <?php
-        include "footer.inc";
+    include "footer.inc";
     ?>
 </body>
+
 </html>
 <!--
 AI prompt used

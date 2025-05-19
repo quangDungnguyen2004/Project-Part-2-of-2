@@ -1,11 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono&display=swap" rel="stylesheet">
-    <title>Document</title>
-    
-</head>
-<body>
+<nav class="nav">
+        <div class="menu">
+            <a href="index.php" class="clickable-wrapper">
+                <div id="earthling-icon"></div>
+                <span class="text-wrapper">EARTHLING</span>
+            </a>
+        </div>
+        <div class="mid-selections">
+            <a href="about.php" class="about-us">ABOUT US</a>
+            <a href="#" class="features">FEATURES</a>
+            <a href="#" class="enterprise">ENTERPRISE</a>
+            <a href="jobs.php" class="careers">CAREERS</a>
+            <a href="mailto:info@earthlingai.com.au" class="contact-us">CONTACT US</a>
+        </div>
+    <div class="hidden-menu">
+        <img src="../images/dropdownbutton.png" alt="drop down button">
+        <div class="dropdown-content">
+            <ul>
+                <li><a href="about.php" class="about-us">ABOUT US</a></li>
+                <li><a href="#" class="features">FEATURES</a></li>
+                <li><a href="#" class="enterprise">ENTERPRISE</a></li>
+                <li><a href="jobs.php" class="careers">CAREERS</a></li>
+                <li><a href="mailto:info@earthlingai.com.au" class="contact-us">CONTACT US</a></li>
+            </ul>
+        </div>
+    </div>
+        <div class="left-selections">
+            <div class="login-button">LOG IN</div>
+            <div class="download-button">DOWNLOAD</div>
+        </div>
+    </nav>

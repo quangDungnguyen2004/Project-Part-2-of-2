@@ -178,13 +178,13 @@ body {
     padding-right: 10px;
     gap: 15px;
 }
-.left-selections .signin-button {
+.left-selections .login-button {
     color: #F0F0F0;
     font-size: 18px;
     cursor: pointer;
     transition: 0.3s ease-in, 0.3s ease-out;
 }
-.left-selections .signin-button:hover {
+.left-selections .login-button:hover {
     color: plum;
 }
 .download-button {
@@ -660,8 +660,48 @@ fieldset {
 }
 /* End of APPLICATION */
 
+/* Manage */
+.dashboard-header {
+    display: flex; /* Use flexbox for centering */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center children horizontally */
+    justify-content: center; /* Center children vertically */
+    color: #F0F0F0;
+    font-size: 24px;
+    text-align: center; /* Center text within the element */
+    margin-top: 70px;
+    margin-bottom: 30px;
+}
+.db_manipulation {
+    padding: 25px;
+    width: 400px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    color: #0A0707;
+    background-color: #dadada;
+}
+.db_manipulation .search-button,
+.db_manipulation .confirm-button {
+    width: 100%;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.3s ease-in, 0.3s ease-out;
+}
+.db_manipulation .search-button {
+    background-color: lightblue;
+}
+.db_manipulation .search-button:hover {
+    background-color: plum;
+}
+.db_manipulation .confirm-button {
+    background-color: orange;
+}
+.db_manipulation .confirm-button:hover {
+    background-color: orangered;
+}
+/* Manage */
 
-/* FOOTER */
+/* End of FOOTER */
 .footer {
     display: flex;
     justify-content: center;
