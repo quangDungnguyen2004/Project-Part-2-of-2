@@ -15,7 +15,7 @@
     ?>
     <main class="main">
         <div class="form-wrapper">
-            <form class="application-form" action="process_eoi.php" method="post">
+            <form class="application-form" action="process_eoi.php" method="post" novalidate="novalidate">
                 <h2 class="form-title">Application Form</h2>
                 <p class="under-form-title">Application form for Employee</p>
                 <div class="input-block">
