@@ -23,6 +23,7 @@
 <body>
     <?php
         include "nav.inc";
+        include "header.inc";
     ?>
     <main class="main">
         <div class="mid-part">
@@ -62,7 +63,7 @@
                                 };
                             };
                             echo "</ol>
-                            <p><strong>Reports To:</strong>.".$row['Reports'].".</p>
+                            <p><strong>Reports To:</strong>".$row['Reports'].".</p>
                             <p><strong>Reference ID:</strong> ".$row['JobRefNumber']."</p>
                             </div>
                             ";
