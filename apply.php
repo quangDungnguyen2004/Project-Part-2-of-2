@@ -3,7 +3,7 @@
 
 <main class="main">
         <div class="form-wrapper">
-            <form class="application-form" action="https://mercury.swin.edu.au/it000000/formtest.php" method="post">
+            <form class="application-form" action="confirmation.php" method="post">
                 <h2 class="form-title">Application Form</h2>
                 <p class="under-form-title">Application form for Employee</p>
                 <div class="input-block">
@@ -113,7 +113,7 @@
                 </div>
                 <div class="input-block">
                     <input class="left-button" type="reset" value="Reset">
-                    <input class="right-button" type="submit" value="Apply">
+                    <input class="right-button" type="submit" value="Apply"> 
                 </div>
             </form>
         </div>
