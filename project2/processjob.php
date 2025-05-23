@@ -55,7 +55,7 @@
     
     //reference number format should be two letter + 4 to 9 numbers
     if (!empty($reference_number) && !preg_match('/^[A-Z]{2}[0-9]{4,9}/', $reference_number))
-        $errors[] = "Reference number should be two letter follow up by 4 to 9 numbers."
+        $errors[] = "Reference number should be two letter follow up by 4 to 9 numbers.";
 
     //error handling, should be similar to process_eoi.php page
     if (!empty($errors)) {
@@ -92,7 +92,6 @@
     //insert into database
     $stmt = mysqli_prepare($conn, "INSERT INTO job (JobRefNumber, JobTitle, Location, JobDesc, Salary, Hours, Reports) VALUES (?, ?, ?, ?, ?, ?, ?)");
     mysqli_stmt_bind_param($stmt, "sssssss", $reference_number, $job_title, $location, $job_desc, $salary, $hours, $reports);
-
     //processing
     if (mysqli_stmt_execute($stmt)) {
     
@@ -101,7 +100,7 @@
         
         foreach ($requirements as $req_value) {
             $req_value = sanitize_input($req_value);
-            mysqli_stmt_bind_param($req_stmt, "s,s", $req_value, $reference_number);
+            mysqli_stmt_bind_param($req_stmt, "ss", $req_value, $reference_number);
             mysqli_stmt_execute($req_stmt);
         }
 
