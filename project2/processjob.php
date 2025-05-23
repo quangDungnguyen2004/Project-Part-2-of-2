@@ -54,13 +54,8 @@
         $errors[] = "Hours is required.";
     
     //reference number format should be two letter + 4 to 9 numbers
-<<<<<<< HEAD
     if (!empty($reference_number) && !preg_match('/^[A-Z]{2}[0-9]{4,9}/', $reference_number))
         $errors[] = "Reference number should be two letter follow up by 4 to 9 numbers.";
-=======
-if (!empty($reference_number) && !preg_match('/^[A-Z]{2}[0-9]{4,9}/', $reference_number))
-    $errors[] = "Reference number should be two letter follow up by 4 to 9 numbers.";
->>>>>>> 68f7029020607ff9776eeb6c669c75ab600f158f
 
     //error handling, should be similar to process_eoi.php page
     if (!empty($errors)) {
