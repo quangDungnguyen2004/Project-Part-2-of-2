@@ -74,11 +74,9 @@ ini_set('display_errors', 1);
                     <tr>
                         <td colspan="2">
                             <ul>
-                                <li>Hien Long Dang: Home Page, Team Page, CSS, Job description Page, update Github,
-                                    update Jira</li>
-                                <li>Quoc Tri Nguyen: Home Page, Team Page, CSS, Designer, manage Github</li>
-                                <li>Quang Dung Nguyen: Home Page, Team Page, CSS, Job application Page, manage Github,
-                                    manage Jira</li>
+                                <li>Hien Long Dang: 1. Use PHP to reuse common elements, 2. Create a file to store your database connection variables “settings.php”, 6. Update about page (about.php), 8: Enhancements, manage GitHub</li>
+                                <li>Quoc Tri Nguyen: 4. Adding validated records to the EOI table, 5. HR manager queries (manage.php), 8: Enhancements,  manage Github</li>
+                                <li>Quang Dung Nguyen: 3. Create an EOI table, 7. Jobs Description, 8: Enhancements,  manage Github</li>
                             </ul>
                         </td>
                     </tr>
