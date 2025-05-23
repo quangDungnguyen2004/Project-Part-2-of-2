@@ -30,7 +30,7 @@
                 <div class="title-wrapper">
                     <h1>Featured roles</h1>
                 </div>
-                <form action="process_eoi.php" method="post">
+                <form action="apply.php" method="post">
                     <button class="apply-button" type="submit">Apply now ➜</button>
                 </form>
             </section>
