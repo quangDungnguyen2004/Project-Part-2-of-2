@@ -90,18 +90,18 @@ if (!empty($reference_number) && !preg_match('/^[A-Z]{2}[0-9]{4,9}/', $reference
     
 
     //insert into database
-    $stmt = mysqli_prepare($conn, "INSERT INTO job (JobRefNumber, JobTitle, Location, JobDesc, Salary, Hours, Reports) VALUES (?, ?, ?, ?, ?, ?, ?)");
+    $stmt = mysqli_prepare($conn, "INSERT INTO jobs (JobRefNumber, JobTitle, Location, JobDesc, Salary, Hours, Reports) VALUES (?, ?, ?, ?, ?, ?, ?)");
     mysqli_stmt_bind_param($stmt, "sssssss", $reference_number, $job_title, $location, $job_desc, $salary, $hours, $reports);
 
     //processing
     if (mysqli_stmt_execute($stmt)) {
     
         // Insert the requirements
-        $req_stmt = mysqli_prepare($conn, "INSERT INTO requirements(Req, JobRefNumber) VALUES (?)");
+        $req_stmt = mysqli_prepare($conn, "INSERT INTO requirements(Req, JobRefNumber) VALUES (?,?)");
         
         foreach ($requirements as $req_value) {
             $req_value = sanitize_input($req_value);
-            mysqli_stmt_bind_param($req_stmt, "s,s", $req_value, $reference_number);
+            mysqli_stmt_bind_param($req_stmt, "ss", $req_value, $reference_number);
             mysqli_stmt_execute($req_stmt);
         }
 
@@ -121,7 +121,7 @@ if (!empty($reference_number) && !preg_match('/^[A-Z]{2}[0-9]{4,9}/', $reference
             <body>
                 <div class='success-container'>
                     <h2>New Job Added Successfully!</h2>
-                    <p>Your EOI number is:</p>
+                    <p>Job Reference number is:</p>
                     <div class='ref-number'>{$reference_number}</div>
                     <p>Updated to the career page.</p>
                     <p><a href='index.php'>Return to Home Page</a></p>
