@@ -77,19 +77,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="container">
         <h2>Confirm Your Application</h2>
         <table>
-            <tr><th>Reference Number</th><td><?= htmlspecialchars($_POST['Reference_number']) ?></td></tr>
-            <tr><th>First Name</th><td><?= htmlspecialchars($_POST['Full_name']) ?></td></tr>
-            <tr><th>Last Name</th><td><?= htmlspecialchars($_POST['Last_name']) ?></td></tr>
-            <tr><th>Date of Birth</th><td><?= htmlspecialchars($_POST['Date_of_birth']) ?></td></tr>
-            <tr><th>Gender</th><td><?= htmlspecialchars($_POST['Gender']) ?></td></tr>
-            <tr><th>Street</th><td><?= htmlspecialchars($_POST['Street']) ?></td></tr>
-            <tr><th>Suburb</th><td><?= htmlspecialchars($_POST['Suburb']) ?></td></tr>
-            <tr><th>Postcode</th><td><?= htmlspecialchars($_POST['Postcode']) ?></td></tr>
-            <tr><th>State</th><td><?= htmlspecialchars($_POST['State']) ?></td></tr>
-            <tr><th>Email</th><td><?= htmlspecialchars($_POST['Email']) ?></td></tr>
-            <tr><th>Phone</th><td><?= htmlspecialchars($_POST['Phone_number']) ?></td></tr>
-            <tr><th>Technical Skills</th><td><?= isset($_POST['Tech_skills']) ? implode(", ", (array)$_POST['Tech_skills']) : '' ?></td></tr>
-            <tr><th>Other Skills</th><td><?= htmlspecialchars($_POST['Other_skills']) ?></td></tr>
+            <tr><th>Reference Number</th><td><?= htmlspecialchars($_POST['reference_number']) ?></td></tr>
+            <tr><th>First Name</th><td><?= htmlspecialchars($_POST['first_name']) ?></td></tr>
+            <tr><th>Last Name</th><td><?= htmlspecialchars($_POST['last_name']) ?></td></tr>
+            <tr><th>Date of Birth</th><td><?= htmlspecialchars($_POST['date_of_birth']) ?></td></tr>
+            <tr><th>Gender</th><td><?= htmlspecialchars($_POST['gender']) ?></td></tr>
+            <tr><th>Street</th><td><?= htmlspecialchars($_POST['street']) ?></td></tr>
+            <tr><th>Suburb</th><td><?= htmlspecialchars($_POST['suburb']) ?></td></tr>
+            <tr><th>Postcode</th><td><?= htmlspecialchars($_POST['postcode']) ?></td></tr>
+            <tr><th>State</th><td><?= htmlspecialchars($_POST['state']) ?></td></tr>
+            <tr><th>Email</th><td><?= htmlspecialchars($_POST['email']) ?></td></tr>
+            <tr><th>Phone</th><td><?= htmlspecialchars($_POST['phone_number']) ?></td></tr>
+            <tr><th>Technical Skills</th><td><?= isset($_POST['tech_skills']) ? implode(", ", (array)$_POST['tech_skills']) : '' ?></td></tr>
+            <tr><th>Other Skills</th><td><?= htmlspecialchars($_POST['other_skills']) ?></td></tr>
         </table>
 
         <form action="process_eoi.php" method="post" class="buttons">
