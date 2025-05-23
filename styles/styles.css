@@ -182,6 +182,7 @@ body {
     color: #F0F0F0;
     font-size: 18px;
     cursor: pointer;
+    text-decoration: none;
     transition: 0.3s ease-in, 0.3s ease-out;
 }
 .left-selections .login-button:hover {
