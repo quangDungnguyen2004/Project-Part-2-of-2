@@ -25,7 +25,7 @@
         </div>
     </div>
         <div class="left-selections">
-            <div class="login-button">LOG IN</div>
+            <a href="login.php" class="login-button">LOG IN</a>
             <div class="download-button">DOWNLOAD</div>
         </div>
     </nav>
