@@ -28,14 +28,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         h2 {
             text-align: center;
-            margin-bottom: 25px;
+            
             color: #111;
         }
 
         table {
             width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 30px;
+            
         }
 
         th, td {
@@ -47,12 +46,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         th {
             width: 35%;
             font-weight: bold;
-            color: #222;
+            
         }
 
-        td {
-            color: #333;
-        }
+      
 
         .buttons {
             text-align: center;
@@ -68,6 +65,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             font-size: 15px;
             
         }
+
+        
 
         
 
