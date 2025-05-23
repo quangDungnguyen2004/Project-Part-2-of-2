@@ -41,12 +41,7 @@
                         while($row = $jobs->fetch_assoc()){
                             $refNum = $row['JobRefNumber'];
 
-                            $req = "SELECT requirements.Req
-                                FROM ((requirements
-                                INNER JOIN jobrequirement ON jobrequirement.ReqID = requirements.ReqID)
-                                INNER JOIN jobs ON jobs.JobRefNumber = jobrequirement.JobRefNumber)
-                                WHERE jobs.JobRefNumber = '$refNum';
-                            ";
+                            $req = "SELECT Req FROM requirements WHERE JobRefNumber = '$refNum';";
 
                             $requirements = mysqli_query($conn, $req);
 
