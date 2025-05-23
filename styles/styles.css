@@ -688,20 +688,59 @@ fieldset {
     transition: 0.3s ease-in, 0.3s ease-out;
 }
 .db_manipulation .search-button {
+    margin-top: 10px;
     background-color: lightblue;
 }
 .db_manipulation .search-button:hover {
     background-color: plum;
 }
 .db_manipulation .confirm-button {
+    margin-top: 10px;
     background-color: orange;
 }
 .db_manipulation .confirm-button:hover {
     background-color: orangered;
 }
-/* Manage */
+/* End of Manage */
 
+
+/* FOOTER */
+.login-wrapper {
+    margin: 100px auto 100px auto;
+    padding: 25px;
+    width: 400px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    color: #0A0707;
+    background-color: #dadada;
+}
+.login-wrapper .login-title {
+    text-align: center;
+}
+
+.login-wrapper .login-button {
+    width: 100%;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 10px;
+    background-color: lightblue;
+    transition: 0.3s ease-in, 0.3s ease-out;
+}
+.login-wrapper .login-button:hover {
+    background-color: plum;
+}
+.register-link {
+    font-size: 18px;
+    color: #0A0707;
+    transition: 0.3s ease-in, 0.3s ease-out;
+}
+.register-link:hover {
+    color: #888888;
+}
 /* End of FOOTER */
+
+
+/* FOOTER */
 .footer {
     display: flex;
     justify-content: center;
