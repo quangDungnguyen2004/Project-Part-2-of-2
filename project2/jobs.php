@@ -30,7 +30,7 @@
                 <div class="title-wrapper">
                     <h1>Featured roles</h1>
                 </div>
-                <form action="process_eoi.php" method="post">
+                <form action="apply.php" method="post">
                     <button class="apply-button" type="submit">Apply now ➜</button>
                 </form>
             </section>
@@ -41,12 +41,7 @@
                         while($row = $jobs->fetch_assoc()){
                             $refNum = $row['JobRefNumber'];
 
-                            $req = "SELECT requirements.Req
-                                FROM ((requirements
-                                INNER JOIN jobrequirement ON jobrequirement.ReqID = requirements.ReqID)
-                                INNER JOIN jobs ON jobs.JobRefNumber = jobrequirement.JobRefNumber)
-                                WHERE jobs.JobRefNumber = '$refNum';
-                            ";
+                            $req = "SELECT Req FROM requirements WHERE JobRefNumber = '$refNum';";
 
                             $requirements = mysqli_query($conn, $req);
 

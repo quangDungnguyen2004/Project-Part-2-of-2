@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 19, 2025 at 05:26 PM
+-- Generation Time: May 22, 2025 at 12:36 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -20,32 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `job_listing_db`
 --
--- --------------------------------------------------------
-
---
--- Table structure for table `jobrequirement`
---
-
-CREATE TABLE `jobrequirement` (
-  `ReqID` int(11) NOT NULL,
-  `JobRefNumber` varchar(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `jobrequirement`
---
-
-INSERT INTO `jobrequirement` (`ReqID`, `JobRefNumber`) VALUES
-(1, 'FT105'),
-(2, 'FT105'),
-(3, 'FT105'),
-(4, 'FT105'),
-(5, 'FT105'),
-(6, 'FT102'),
-(7, 'FT102'),
-(8, 'FT102'),
-(9, 'FT102'),
-(10, 'FT102');
 
 -- --------------------------------------------------------
 
@@ -79,35 +53,29 @@ INSERT INTO `jobs` (`JobRefNumber`, `JobTitle`, `Location`, `JobDesc`, `Salary`,
 
 CREATE TABLE `requirements` (
   `ReqID` int(11) NOT NULL,
-  `Req` text NOT NULL
+  `Req` text NOT NULL,
+  `JobRefNumber` varchar(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `requirements`
 --
 
-INSERT INTO `requirements` (`ReqID`, `Req`) VALUES
-(1, '3+ years experience in ML model development, preferably with Transformers or Deep RL'),
-(2, 'Strong background in Python, PyTorch, and large-scale data processing'),
-(3, 'Familiarity with distributed training, vector databases, or LLM fine-tuning'),
-(4, 'Published research in ML conferences (e.g., NeurIPS, ICML)'),
-(5, 'Experience deploying ML models in production'),
-(6, 'Minimum 2-4 years experience in data engineering or backend development'),
-(7, 'Degree in Computer Science, Engineering, or a related field'),
-(8, 'Experience with tools like Apache Spark, Kafka, Airflow, and SQL/NoSQL databases'),
-(9, 'Experience with cloud platforms (AWS, GCP, or Azure)'),
-(10, 'Knowledge of real-time data processing');
+INSERT INTO `requirements` (`ReqID`, `Req`, `JobRefNumber`) VALUES
+(1, '3+ years experience in ML model development, preferably with Transformers or Deep RL', 'FT105'),
+(2, 'Strong background in Python, PyTorch, and large-scale data processing', 'FT105'),
+(3, 'Familiarity with distributed training, vector databases, or LLM fine-tuning', 'FT105'),
+(4, 'Published research in ML conferences (e.g., NeurIPS, ICML)', 'FT105'),
+(5, 'Experience deploying ML models in production', 'FT105'),
+(6, 'Minimum 2-4 years experience in data engineering or backend development', 'FT102'),
+(7, 'Degree in Computer Science, Engineering, or a related field', 'FT102'),
+(8, 'Experience with tools like Apache Spark, Kafka, Airflow, and SQL/NoSQL databases', 'FT102'),
+(9, 'Experience with cloud platforms (AWS, GCP, or Azure)', 'FT102'),
+(10, 'Knowledge of real-time data processing', 'FT102');
 
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `jobrequirement`
---
-ALTER TABLE `jobrequirement`
-  ADD PRIMARY KEY (`ReqID`,`JobRefNumber`),
-  ADD KEY `JobRefNumber` (`JobRefNumber`);
 
 --
 -- Indexes for table `jobs`
@@ -119,7 +87,8 @@ ALTER TABLE `jobs`
 -- Indexes for table `requirements`
 --
 ALTER TABLE `requirements`
-  ADD PRIMARY KEY (`ReqID`);
+  ADD PRIMARY KEY (`ReqID`),
+  ADD KEY `JobRefNumber` (`JobRefNumber`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -136,11 +105,10 @@ ALTER TABLE `requirements`
 --
 
 --
--- Constraints for table `jobrequirement`
+-- Constraints for table `requirements`
 --
-ALTER TABLE `jobrequirement`
-  ADD CONSTRAINT `jobRequirement_ibfk_1` FOREIGN KEY (`ReqID`) REFERENCES `requirements` (`ReqID`) ON DELETE CASCADE,
-  ADD CONSTRAINT `jobRequirement_ibfk_2` FOREIGN KEY (`JobRefNumber`) REFERENCES `jobs` (`JobRefNumber`) ON DELETE CASCADE;
+ALTER TABLE `requirements`
+  ADD CONSTRAINT `requirements_ibfk_1` FOREIGN KEY (`JobRefNumber`) REFERENCES `jobs` (`JobRefNumber`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
