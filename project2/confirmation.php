@@ -1,7 +1,15 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
     session_start();
-    $_SESSION['form_data'] = $_POST;
+
+    //Allow access to this page once the user has submitted the form, and save the form data to the session for later use.
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $_SESSION['confirmed_data'] = $_POST; 
+    $data = $_POST; 
+} else {
+    header("Location: apply.php");
+    exit();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -66,6 +74,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             
         }
 
+        input[type="submit"]:hover {
+            background-color: #a3d1dc;
+        }
+
         
 
         
@@ -102,5 +114,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </body>
 </html>
 <?php
-}
+
 ?>

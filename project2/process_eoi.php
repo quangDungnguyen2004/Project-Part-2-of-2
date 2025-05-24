@@ -13,6 +13,12 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit();
 }
 
+// If data is defined from confirmation.php, use session
+if (isset($_SESSION['confirmed_data'])) {
+    $_POST = $_SESSION['confirmed_data'];
+    unset($_SESSION['confirmed_data']); 
+}
+
 // Include database connection settings
 require_once("settings.php");
 
