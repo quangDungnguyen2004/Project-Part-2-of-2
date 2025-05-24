@@ -15,7 +15,7 @@
     ?>
     <main class="main">
         <div class="form-wrapper">
-            <form class="application-form" action="confirmation.php" method="post" novalidate="novalidate">
+            <form class="application-form" action="confirmation.php" method="post">
                 <h2 class="form-title">Application Form</h2>
                 <p class="under-form-title">Application form for Employee</p>
                 <div class="input-block">
@@ -34,20 +34,22 @@
                         <!-- First name -->
                         <label for="fname">First Name</label>
                         <input type="text" id="fname" name="first_name" maxlength="20" pattern="^[A-Za-z]{1,20}$"
-                            placeholder="Type here..." autocomplete="given-name" required
+                            placeholder="Type here..." required
                             title="First name must contain only letters (A-Z), max 20 characters.">
                     </div>
                     <div class="input-block">
                         <!-- Last name -->
                         <label for="lname">Last Name</label>
                         <input type="text" id="lname" name="last_name" maxlength="20" pattern="^[A-Za-z]{1,20}$"
-                            placeholder="Type here..." autocomplete="family-name" required
+                            placeholder="Type here..." required
                             title="Last name must contain only letters (A-Z), max 20 characters.">
                     </div>
                     <div class="input-block">
                         <!-- Date of Birth -->
                         <label for="dob">Date of Birth</label>
-                        <input type="date" id="dob" name="date_of_birth" required>
+                        <input type="text" id="dob" name="date_of_birth"
+                            pattern="(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/\d{4}" placeholder="dd/mm/yyyy"
+                            title="Format: dd/mm/yyyy (e.g., 31/12/1999)" required>
                     </div>
                 </div>
                 <div class="input-block">
@@ -113,8 +115,8 @@
                 <div class="input-block">
                     <!-- Email -->
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="Enter your email" autocomplete="email"
-                        required>
+                    <input type="email" id="email" name="email" placeholder="example@domain.com"
+                        pattern="[A-Za-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
                 </div>
                 <div class="input-block">
                     <!-- Phone number -->
@@ -122,7 +124,7 @@
                     <!--Pattern from 3Widgets.com Regex generator-->
                     <input type="tel" id="phone" name="phone_number" maxlength="12"
                         pattern="04[0-9]{2} [0-9]{3} [0-9]{3}" placeholder="0412 345 678" title="Format: 0412 345 678"
-                        autocomplete="tel" required>
+                        required>
                 </div>
                 <div class="input-block">
                     <fieldset class="skills-section" required>

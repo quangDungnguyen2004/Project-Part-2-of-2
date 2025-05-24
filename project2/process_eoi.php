@@ -239,30 +239,10 @@ if (mysqli_stmt_execute($stmt)) {
         mysqli_stmt_execute($skill_stmt);
     }
 
-    // Display success message with EOI number
-    echo "<!DOCTYPE html>
-        <html lang='en'>
-        <head>
-            <meta charset='UTF-8'>
-            <title>Application Submitted</title>
-            <style>
-                body {font-family: 'Geist Mono', sans-serif; background: #f8f8f8; }
-                .success-container { max-width: 500px; margin: 50px auto; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px #ccc; padding: 30px; text-align: center; }
-                h2 { color: #007700; }
-                .eoi-number { font-size: 1.2em; font-weight: bold; color: #333; }
-                a { color: #0077cc; }
-            </style>
-        </head>
-        <body>
-            <div class='success-container'>
-                <h2>Application Submitted Successfully!</h2>
-                <p>Your EOI number is:</p>
-                <div class='eoi-number'>{$eoinumber}</div>
-                <p>Thank you for your application.</p>
-                <p><a href='index.php'>Return to Home Page</a></p>
-            </div>
-        </body>
-        </html>";
+    // Redirect to success page with EOI number
+    $_SESSION['eoi_success'] = true;
+    header("Location: success_process_eoi.php?eoi=" . urlencode($eoinumber));
+    exit();
 } else {
     // Display error message if database insertion fails
     echo "<!DOCTYPE html>
@@ -270,10 +250,18 @@ if (mysqli_stmt_execute($stmt)) {
         <head>
             <meta charset='UTF-8'>
             <title>Submission Error</title>
+            <style>
+                body { font-family: 'Geist Mono', sans-serif; background: #f8f8f8; }
+                .error-container { max-width: 500px; margin: 50px auto; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px #ccc; padding: 30px; }
+                h2 { color: #c00; }
+                a { color: #0077cc; }
+            </style>
         </head>
         <body>
-            <h2>Error: " . htmlspecialchars(mysqli_error($conn)) . "</h2>
-            <p><a href='apply.php'>Try again</a></p>
+            <div class='error-container'>
+                <h2>Error: " . htmlspecialchars(mysqli_error($conn)) . "</h2>
+                <p><a href='apply.php'>Try again</a></p>
+            </div>
         </body>
         </html>";
 }

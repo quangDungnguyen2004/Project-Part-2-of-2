@@ -2,6 +2,12 @@
 // Start the session - required for maintaining user state across pages
 session_start();
 
+// Restrict access: Only allow if user is logged in
+if (!isset($_SESSION['username'])) {
+    header("Location: index.php");
+    exit();
+}
+
 // Enable all PHP error reporting for debugging
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
@@ -133,29 +139,36 @@ if (isset($_POST['change_status_eoi']) && isset($_POST['status'])) {
 
     <div class="db_manipulation">
         <h2>Action Center</h2>
+        <form class="add-job-redirect" action="addjob.php" method="post">
+            <fieldset>
+                <label>Publishing New Jobs:</label>
+                <input class="add-job-button" type="submit" value="Add Job">
+            </fieldset>
+        </form>
         <!-- Search/Filter form -->
         <form method="get">
-        <fieldset>
-            <!-- Name filters -->
-            <label for="first_name">First Name:</label>
-            <input type="text" name="first_name" id="first_name" value="<?= htmlspecialchars($first_name_search) ?>">
-            <label for="last_name">Last Name:</label>
-            <input type="text" name="last_name" id="last_name" value="<?= htmlspecialchars($last_name_search) ?>">
+            <fieldset>
+                <!-- Name filters -->
+                <label for="first_name">First Name:</label>
+                <input type="text" name="first_name" id="first_name"
+                    value="<?= htmlspecialchars($first_name_search) ?>">
+                <label for="last_name">Last Name:</label>
+                <input type="text" name="last_name" id="last_name" value="<?= htmlspecialchars($last_name_search) ?>">
 
-            <!-- Job Reference filter dropdown -->
-            <label for="jobref">Job Reference:</label>
-            <select id="jobref" name="jobref" onchange="this.form.submit()">
-                <option value="ALL" <?= ($selected_jobref === "ALL") ? ' selected' : '' ?>>
-                    Show All
-                </option>
-                <?php foreach ($jobrefs as $jobref): ?>
-                    <option value="<?= htmlspecialchars($jobref) ?>" <?= ($selected_jobref == $jobref) ? ' selected' : '' ?>>
-                        <?= htmlspecialchars($jobref) ?>
+                <!-- Job Reference filter dropdown -->
+                <label for="jobref">Job Reference:</label>
+                <select id="jobref" name="jobref" onchange="this.form.submit()">
+                    <option value="ALL" <?= ($selected_jobref === "ALL") ? ' selected' : '' ?>>
+                        Show All
                     </option>
-                <?php endforeach; ?>
-            </select>
-            <input class="search-button" type="submit" value="Search">
-        </fieldset>
+                    <?php foreach ($jobrefs as $jobref): ?>
+                        <option value="<?= htmlspecialchars($jobref) ?>" <?= ($selected_jobref == $jobref) ? ' selected' : '' ?>>
+                            <?= htmlspecialchars($jobref) ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
+                <input class="search-button" type="submit" value="Search">
+            </fieldset>
         </form>
 
         <!-- Mass deletion form -->
@@ -171,7 +184,7 @@ if (isset($_POST['change_status_eoi']) && isset($_POST['status'])) {
                 <?php endforeach; ?>
             </select>
             <input class="confirm-button" type="submit" value="Confirm">
-        </form>
+        </form>   
     </div>
 
     <!-- SECTION 5: DATA DISPLAY TABLE -->

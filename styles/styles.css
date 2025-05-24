@@ -6,762 +6,775 @@
  */
 
 @media (max-width: 1300px) {
-    .main .overview {
-        width: 95% !important;
-    }
-    .mid-selections {
-        display: none !important; /* Force hide */
-    }
-    .nav .hidden-menu {
-        display: block !important;
-        color: #F0F0F0;
-        cursor: pointer;
-    }
-    .main .mid-part {
-        width: 90% !important;
-    }
-    .about-last-part {
-        width: 90% !important;
-    }
+  .main .overview {
+    width: 95% !important;
+  }
+  .mid-selections {
+    display: none !important; /* Force hide */
+  }
+  .nav .hidden-menu {
+    display: block !important;
+    color: #f0f0f0;
+    cursor: pointer;
+  }
+  .main .mid-part {
+    width: 90% !important;
+  }
+  .about-last-part {
+    width: 90% !important;
+  }
 }
 
 body {
-    display: flex;
-    justify-content: center;
-    min-width: 600px;
-    background-color: #0A0707;
-    color: #F0F0F0;
-    font-family: 'Geist Mono', sans-serif; /* Use Geist Mono font for the entire body */
-    margin: 0 auto;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  min-width: 600px;
+  background-color: #0a0707;
+  color: #f0f0f0;
+  font-family: "Geist Mono", sans-serif; /* Use Geist Mono font for the entire body */
+  margin: 0 auto;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* NAV */
 .nav {
-    position: sticky;
-    top: 20px;
-    z-index: 1000;
-    margin-top: 20px;
-    display: flex;
-    flex-direction: row;
-    height: 70px;
-    width: 75%;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #0A0707;
-    border-radius: 15px;
-    padding: 0 20px;
-    transition: opacity 0.3s ease-in, box-shadow 0.3s ease-out; /* Specify properties */
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  position: sticky;
+  top: 20px;
+  z-index: 1000;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  height: 70px;
+  width: 75%;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #0a0707;
+  border-radius: 15px;
+  padding: 0 20px;
+  transition: opacity 0.3s ease-in, box-shadow 0.3s ease-out; /* Specify properties */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
 }
 .nav:hover {
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
 }
 
 .nav .menu {
-    display: flex;
-    align-items: center;
-    padding-left: 10px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
 }
 
 .clickable-wrapper {
-    display: flex; /* Ensure the image and text are aligned horizontally */
-    align-items: center;
-    text-decoration: none; /* Remove underline from the link */
-    color: #dadada; /* Inherit the color from the parent */
-    transition: 0.3s ease-in, 0.3s ease-out;
+  display: flex; /* Ensure the image and text are aligned horizontally */
+  align-items: center;
+  text-decoration: none; /* Remove underline from the link */
+  color: #dadada; /* Inherit the color from the parent */
+  transition: 0.3s ease-in, 0.3s ease-out;
 }
 .clickable-wrapper:hover {
-    color: plum; /* Inherit the color from the parent */
+  color: plum; /* Inherit the color from the parent */
 }
 
 .clickable-wrapper .text-wrapper {
-    padding-left: 5px;
-    font-size: 24px;
+  padding-left: 5px;
+  font-size: 24px;
 }
 
 #earthling-icon {
-    width: 45px;
-    height: 45px;
-    background-image: url("images/earthling_icon.png");
-    background-size: contain;
-    background-position: center;
-    border-radius: 10px;
+  width: 45px;
+  height: 45px;
+  background-image: url("images/earthling_icon.png");
+  background-size: contain;
+  background-position: center;
+  border-radius: 10px;
 }
 
 .nav .mid-selections {
-    display: flex;
-    flex-wrap: wrap; /* Allow wrapping of child elements */
-    justify-content: space-between;
-    font-size: 18px;
-    gap: 20px; /* Adds a 20px gap between child elements */
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping of child elements */
+  justify-content: space-between;
+  font-size: 18px;
+  gap: 20px; /* Adds a 20px gap between child elements */
 }
 .nav .mid-selections * {
-    padding: 5px;
+  padding: 5px;
 }
 .nav .mid-selections .about-us,
 .nav .mid-selections .features,
 .nav .mid-selections .enterprise,
 .nav .mid-selections .careers,
 .nav .mid-selections .contact-us {
-    text-decoration: none;
-    color: #888888;
-    transition: 0.3s ease-in, 0.3s ease-out; /* Specify properties */
+  text-decoration: none;
+  color: #888888;
+  transition: 0.3s ease-in, 0.3s ease-out; /* Specify properties */
 }
 .nav .mid-selections .about-us:hover,
 .nav .mid-selections .features:hover,
 .nav .mid-selections .enterprise:hover,
 .nav .mid-selections .careers:hover,
 .nav .mid-selections .contact-us:hover {
-    text-decoration: none;
-    color: #F0F0F0;
+  text-decoration: none;
+  color: #f0f0f0;
 }
 
 .hidden-menu {
-    display: none;
-    position: relative; /* Position relative to contain the dropdown */
+  display: none;
+  position: relative; /* Position relative to contain the dropdown */
 }
 
 .hidden-menu img {
-    transition: transform 0.15s ease-in-out; /* Smooth transition for the rotation */
+  transition: transform 0.15s ease-in-out; /* Smooth transition for the rotation */
 }
 
 .hidden-menu img:hover {
-    transform: rotate(45deg); /* Rotate the image 90 degrees on hover */
+  transform: rotate(45deg); /* Rotate the image 90 degrees on hover */
 }
 
 .dropdown-content {
-    opacity: 0; /* Initially invisible */
-    visibility: hidden; /* Initially hidden */
-    position: absolute; /* Position absolutely within the relative container */
-    top: 100%; /* Position directly below the image */
-    left: 50%; /* Start positioning from the center */
-    transform: translateX(-50%); /* Center the dropdown horizontally */
-    background-color: #0A0707;
-    min-width: 160px;
-    z-index: 1;
-    border-radius: 15px;
-    box-shadow: 0 0 10px rgba(15, 129, 223, 0.2);
-    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out; /* Transition for opacity and visibility */
+  opacity: 0; /* Initially invisible */
+  visibility: hidden; /* Initially hidden */
+  position: absolute; /* Position absolutely within the relative container */
+  top: 100%; /* Position directly below the image */
+  left: 50%; /* Start positioning from the center */
+  transform: translateX(-50%); /* Center the dropdown horizontally */
+  background-color: #0a0707;
+  min-width: 160px;
+  z-index: 1;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(15, 129, 223, 0.2);
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out; /* Transition for opacity and visibility */
 }
 
 .dropdown-content ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 .dropdown-content a {
-    color: #F0F0F0;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    color: #888888;
-    transition: color 0.3s ease-in, background-color 0.3s ease-out;
-    border-radius: 15px; /* Transition for color and background-color */
+  color: #f0f0f0;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  color: #888888;
+  transition: color 0.3s ease-in, background-color 0.3s ease-out;
+  border-radius: 15px; /* Transition for color and background-color */
 }
 
 .dropdown-content a:hover {
-    background-color: #0A0707;
-    color: #F0F0F0;
+  background-color: #0a0707;
+  color: #f0f0f0;
 }
 
 .hidden-menu:hover .dropdown-content {
-    opacity: 1; /* Make visible */
-    visibility: visible; /* Ensure visibility */
+  opacity: 1; /* Make visible */
+  visibility: visible; /* Ensure visibility */
 }
 
 .left-selections {
-    display: flex;
-    align-items: center;
-    padding-right: 10px;
-    gap: 15px;
+  display: flex;
+  align-items: center;
+  padding-right: 10px;
+  gap: 15px;
 }
 .left-selections .login-button {
-    color: #F0F0F0;
-    font-size: 18px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: 0.3s ease-in, 0.3s ease-out;
+  color: #f0f0f0;
+  font-size: 18px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.3s ease-in, 0.3s ease-out;
 }
 .left-selections .login-button:hover {
-    color: plum;
+  color: plum;
 }
 .download-button {
-    font-size: 18px;
-    cursor: pointer;
-    background-color: #F0F0F0;
-    padding: 7px;
-    border-radius: 10px;
-    color: #0A0707;
-    transition: 0.3s ease-in, 0.3s ease-out;
+  font-size: 18px;
+  cursor: pointer;
+  background-color: #f0f0f0;
+  padding: 7px;
+  border-radius: 10px;
+  color: #0a0707;
+  transition: 0.3s ease-in, 0.3s ease-out;
 }
 .download-button:hover {
-    background-color: plum;
-    color: #0A0707;
+  background-color: plum;
+  color: #0a0707;
 }
 /* End Of NAV */
 
-
 /* MAIN */
+input:valid {
+  border-color: green; /* Change border color on valid input */
+}
+input:invalid:not(:placeholder-shown) {
+  border-color: red; /* Change border color on invalid input */
+}
 .main {
-    margin-top: 50px;
-    width: 85%;
+  margin-top: 50px;
+  width: 85%;
 }
 
 .main .top-part {
-    position: relative;
-    display: flex; /* Make .top-part a flex container */
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
-    flex-direction: column; /* Stack items vertically */
-    height: 100%; /* Ensure the container has a height to center vertically */
+  position: relative;
+  display: flex; /* Make .top-part a flex container */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  flex-direction: column; /* Stack items vertically */
+  height: 100%; /* Ensure the container has a height to center vertically */
 }
 #top-image {
-    width: 100%;
-    height: auto;
-    border-radius: 20px;
-    box-shadow: 0 -5px 10px rgba(74, 134, 247, 0.05);
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 -5px 10px rgba(74, 134, 247, 0.05);
 }
 .main .top-part .product-purpose {
-    display: flex; /* Use flexbox for centering */
-    flex-direction: column; /* Stack children vertically */
-    align-items: center; /* Center children horizontally */
-    justify-content: center; /* Center children vertically */
-    color: #F0F0F0;
-    font-size: 24px;
-    text-align: center; /* Center text within the element */
-    margin-bottom: 100px;
+  display: flex; /* Use flexbox for centering */
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center children horizontally */
+  justify-content: center; /* Center children vertically */
+  color: #f0f0f0;
+  font-size: 24px;
+  text-align: center; /* Center text within the element */
+  margin-bottom: 100px;
 }
 .main .top-part .product-purpose2 {
-    display: flex; /* Use flexbox for centering */
-    flex-direction: column; /* Stack children vertically */
-    align-items: center; /* Center children horizontally */
-    justify-content: center; /* Center children vertically */
-    color: #F0F0F0;
-    font-size: 28px;
-    text-align: center; /* Center text within the element */
-    margin-top: 10px;
-    margin-bottom: 30px;
+  display: flex; /* Use flexbox for centering */
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center children horizontally */
+  justify-content: center; /* Center children vertically */
+  color: #f0f0f0;
+  font-size: 28px;
+  text-align: center; /* Center text within the element */
+  margin-top: 10px;
+  margin-bottom: 30px;
 }
 .main .top-part .product-purpose3 {
-    display: flex; /* Use flexbox for centering */
-    flex-direction: column; /* Stack children vertically */
-    align-items: center; /* Center children horizontally */
-    justify-content: center; /* Center children vertically */
-    color: #F0F0F0;
-    font-size: 22px;
-    text-align: center; /* Center text within the element */
-    margin-top: 120px;
-    margin-bottom: 40px;
+  display: flex; /* Use flexbox for centering */
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center children horizontally */
+  justify-content: center; /* Center children vertically */
+  color: #f0f0f0;
+  font-size: 22px;
+  text-align: center; /* Center text within the element */
+  margin-top: 120px;
+  margin-bottom: 40px;
 }
 
 /* End of MAIN */
 
-
-
 /* HOMEPAGE */
 .main .overview {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 70%; /* Default width */
-    margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 70%; /* Default width */
+  margin: 0 auto;
 }
 .main .overview .overview-images {
-    width: 100%;
-    height: auto;
-    border-radius: 20px;
-    box-shadow: 0 0 10px rgba(240, 99, 233, 0.05);
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(240, 99, 233, 0.05);
 }
 
 .main .overview .image-title {
-    padding-top: 70px;
-    padding-bottom: 40px;
-    text-align: center;
-    font-size: 24px;
+  padding-top: 70px;
+  padding-bottom: 40px;
+  text-align: center;
+  font-size: 24px;
 }
 
 #partner {
-    color: lightblue;
+  color: lightblue;
 }
 
 #tutor {
-    color: plum;
+  color: plum;
 }
 
 .main .mid-part {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 70%; /* Define a width for centering */
-    margin: 0 auto; /* Center horizontally */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 70%; /* Define a width for centering */
+  margin: 0 auto; /* Center horizontally */
 }
 
 .main .mid-part .research {
-    color: #F0F0F0;
-    font-size: 24px;
-    padding-bottom: 100px;
-    text-align: center; /* Center the text */
+  color: #f0f0f0;
+  font-size: 24px;
+  padding-bottom: 100px;
+  text-align: center; /* Center the text */
 }
 
 .news {
-    width: 100%; /* Ensure the news container fills the mid-part */
-    margin: 0 auto; /* Center horizontally */
+  width: 100%; /* Ensure the news container fills the mid-part */
+  margin: 0 auto; /* Center horizontally */
 }
 
 .news .left-news {
-    width: 45%; /* Adjust width to fit side by side */
-    float: left; /* Float elements to the left */
+  width: 45%; /* Adjust width to fit side by side */
+  float: left; /* Float elements to the left */
 }
 .news .right-news {
-    width: 45%; /* Adjust width to fit side by side */
-    float: right; /* Float elements to the left */
+  width: 45%; /* Adjust width to fit side by side */
+  float: right; /* Float elements to the left */
 }
 
-#research-left, #research-right {
-    width: 100%; /* Ensure images fill their containers */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 15px; /* Optional: Add rounded corners */
+#research-left,
+#research-right {
+  width: 100%; /* Ensure images fill their containers */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 15px; /* Optional: Add rounded corners */
 }
 
 .image-label {
-    text-align: left; /* Align the label text to the left */
-    margin-top: 10px; /* Add space between the image and the label */
-    font-size: 24px; /* Adjust font size as needed */
-    color: #c2c2c2; /* Set text color */
-    cursor: pointer;
-    transition: 0.3s ease-in, 0.3s ease-out;;
+  text-align: left; /* Align the label text to the left */
+  margin-top: 10px; /* Add space between the image and the label */
+  font-size: 24px; /* Adjust font size as needed */
+  color: #c2c2c2; /* Set text color */
+  cursor: pointer;
+  transition: 0.3s ease-in, 0.3s ease-out;
 }
 
 .image-label:hover {
-    color: #FFFFFF;
+  color: #ffffff;
 }
 
-
 .image-date {
-    text-align: left; /* Align the date text to the left */
-    margin-top: 10px; /* Add space between the image and the date */
-    font-size: 20px; /* Adjust font size as needed */
-    color: #888888; /* Set text color */
+  text-align: left; /* Align the date text to the left */
+  margin-top: 10px; /* Add space between the image and the date */
+  font-size: 20px; /* Adjust font size as needed */
+  color: #888888; /* Set text color */
 }
 
 .see-more {
-    margin: 100px auto 100px auto; /* Center horizontally and add vertical spacing */
-    text-align: center; /* Center the button text */
-    font-size: 24px; /* Adjust font size as needed */
-    color: #F0F0F0; /* Set text color */
-    cursor: pointer;
-    transition: 0.3s ease-in, 0.3s ease-out;
+  margin: 100px auto 100px auto; /* Center horizontally and add vertical spacing */
+  text-align: center; /* Center the button text */
+  font-size: 24px; /* Adjust font size as needed */
+  color: #f0f0f0; /* Set text color */
+  cursor: pointer;
+  transition: 0.3s ease-in, 0.3s ease-out;
 }
 .see-more:hover {
-    color: lightblue; /* Set text color */
+  color: lightblue; /* Set text color */
 }
 
 .main .bottom-part {
-    height: 50px;
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding-top: 70px;
-    padding-bottom: 100px;
-    background-color: #1E1E1E;
-    color: #F0F0F0;
-    border-radius: 15px;
-    font-size: 20px;
-    margin: 70px auto 100px auto;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  height: 50px;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: 70px;
+  padding-bottom: 100px;
+  background-color: #1e1e1e;
+  color: #f0f0f0;
+  border-radius: 15px;
+  font-size: 20px;
+  margin: 70px auto 100px auto;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
 }
 /* End Of HOMEPAGE */
 
-
 /* ABOUTPAGE */
 .main .title-wrapper {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    font-size: 24px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 24px;
 }
-.main .title-wrapper h1{
-    font-size: 44px;
+.main .title-wrapper h1 {
+  font-size: 44px;
 }
 .main .our-team-top-wrapper {
-    display: block;
-    text-align: center;
-    font-size: 24px;
+  display: block;
+  text-align: center;
+  font-size: 24px;
 }
 .main .rounded-image {
-    width: 100%;
-    height: auto;
-    border-radius: 15px;
-    margin-bottom: 80px;
-    border: 2px solid #888888;
-    box-shadow: 0 0 10px rgba(155, 95, 235, 0.22);
-    margin: 20px auto;
-    float: right;
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  margin-bottom: 80px;
+  border: 2px solid #888888;
+  box-shadow: 0 0 10px rgba(155, 95, 235, 0.22);
+  margin: 20px auto;
+  float: right;
 }
 .main .about-last-part {
-    width: 70%;
-    margin: 0 auto;
+  width: 70%;
+  margin: 0 auto;
 }
 .interest-title::first-line {
-    color: rgb(255, 160, 100);
+  color: rgb(255, 160, 100);
 }
 .interests-table {
-    font-weight: bold;
+  font-weight: bold;
 }
 .top-part .product-purpose3 .after-purpose-text1,
 .top-part .product-purpose3 .after-purpose-text2,
 .top-part .product-purpose3 .after-purpose-text3 {
-    color: #F0F0F0;
-    font-size: 20px;
-    max-width: 70%;
-    text-align: center; /* Center text within the element */
+  color: #f0f0f0;
+  font-size: 20px;
+  max-width: 70%;
+  text-align: center; /* Center text within the element */
 }
 .top-part .product-purpose3 .after-purpose-text1 {
-    opacity: 70%;
+  opacity: 70%;
 }
 .top-part .product-purpose3 .after-purpose-text2 {
-    opacity: 20%;
+  opacity: 20%;
 }
 .top-part .product-purpose3 .after-purpose-text3 {
-    opacity: 10%;
+  opacity: 10%;
 }
 figure {
-    float: right;
-    margin: 0; /* Remove default margin */
+  float: right;
+  margin: 0; /* Remove default margin */
 }
 /* End of ABOUTPAGE */
 
-
 /* JOBPAGE */
 .job-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px; /* Space between job boxes */
-    justify-content: center; /* Center the job boxes */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Space between job boxes */
+  justify-content: center; /* Center the job boxes */
 }
 .job-box {
-    background-color: #1E1E1E;
-    border-radius: 15px;
-    padding: 20px;
-    width: 45%;
-    min-width: 400px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Add ease-in-out */
+  background-color: #1e1e1e;
+  border-radius: 15px;
+  padding: 20px;
+  width: 45%;
+  min-width: 400px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Add ease-in-out */
 }
 .job-box:hover {
-    transform: translateY(-4px); /* Move the box up by 2px on hover */
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  transform: translateY(-4px); /* Move the box up by 2px on hover */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 .job-box h3 {
-    margin-top: 0;
-    color: plum;
+  margin-top: 0;
+  color: plum;
 }
 .job-box p {
-    margin: 15px 0;
-    color: #F0F0F0;
+  margin: 15px 0;
+  color: #f0f0f0;
 }
 .job-box .opportunity-details {
-    font-size: 18px;
-    color: lightblue;
+  font-size: 18px;
+  color: lightblue;
 }
 .benefits-section li {
-    font-size: 18px;
+  font-size: 18px;
 }
 .benefits-section .benefits-text0 {
-    opacity: 70%;
+  opacity: 70%;
 }
 .benefits-section .benefits-text1 {
-    opacity: 50%;
+  opacity: 50%;
 }
 .benefits-section .benefits-text2 {
-    opacity: 25%;
+  opacity: 25%;
 }
 .benefits-section .benefits-text3 {
-    opacity: 15%;
+  opacity: 15%;
 }
 .benefits-section .benefits-text4 {
-    opacity: 10%;
+  opacity: 10%;
 }
 
 .apply-button {
-    margin: 40px auto 40px auto; /* Center horizontally and add vertical spacing */
-    padding: 20px 0;
-    width: 100%;
-    text-align: center; /* Center the button text */
-    font-size: 24px; /* Adjust font size as needed */
-    color: #0A0707;
-    transition: 0.3s ease-in, 0.3s ease-out;
-    background-color: lightblue;
-    border-radius: 15px;
+  margin: 40px auto 40px auto; /* Center horizontally and add vertical spacing */
+  padding: 20px 0;
+  width: 100%;
+  text-align: center; /* Center the button text */
+  font-size: 24px; /* Adjust font size as needed */
+  color: #0a0707;
+  transition: 0.3s ease-in, 0.3s ease-out;
+  background-color: lightblue;
+  border-radius: 15px;
 }
 .apply-button a {
-    padding: 20px 0;
-    text-decoration: none; /* Removes underline */
-    color: #0A0707; /* Ensures the link color matches the surrounding text */
+  padding: 20px 0;
+  text-decoration: none; /* Removes underline */
+  color: #0a0707; /* Ensures the link color matches the surrounding text */
 }
 .apply-button:hover {
-    background-color: plum;
-    color: #0A0707;
+  background-color: plum;
+  color: #0a0707;
 }
 /* End of JOBPAGE */
 
-
 /* APPLICATION */
 .form-wrapper {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 .application-form {
-    padding: 25px;
-    width: 600px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    color: #0A0707;
-    background-color: #dadada;
+  padding: 25px;
+  width: 600px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  color: #0a0707;
+  background-color: #dadada;
 }
 .form-title {
-    font-size: 32px;
-    text-align: center;
-    color: #0A0707;
+  font-size: 32px;
+  text-align: center;
+  color: #0a0707;
 }
 .under-form-title {
-    font-size: 20px;
-    text-align: center;
-    padding-bottom: 50px;
-    color: #0A0707;
+  font-size: 20px;
+  text-align: center;
+  padding-bottom: 50px;
+  color: #0a0707;
 }
 .gender-selection-wrapper {
-    display: flex;
-    justify-content: space-evenly; /* Distributes space between the columns */
+  display: flex;
+  justify-content: space-evenly; /* Distributes space between the columns */
 }
 .skills-section {
-    display: flex;
-    justify-content: space-between; /* Distributes space between the columns */
-    gap: 20px; /* Adds space between the columns */
-    align-items: center; /* Aligns items vertically in the center */
+  display: flex;
+  justify-content: space-between; /* Distributes space between the columns */
+  gap: 20px; /* Adds space between the columns */
+  align-items: center; /* Aligns items vertically in the center */
 }
 
 .skill-option {
-    display: flex;
-    flex-direction: column; /* Stacks the label above the checkbox */
-    align-items: center; /* Centers the content horizontally */
+  display: flex;
+  flex-direction: column; /* Stacks the label above the checkbox */
+  align-items: center; /* Centers the content horizontally */
 }
 
 .skill-option label {
-    margin-bottom: 5px; /* Adds space between the label and the checkbox */
+  margin-bottom: 5px; /* Adds space between the label and the checkbox */
 }
 .input-row {
-    display: flex; /* Enables Flexbox layout */
-    gap: 20px; /* Adds space between the input blocks */
-    margin-bottom: 20px; /* Adds space below the row */
+  display: flex; /* Enables Flexbox layout */
+  gap: 20px; /* Adds space between the input blocks */
+  margin-bottom: 20px; /* Adds space below the row */
 }
 .input-block {
-    flex: 1; /* Allows each input block to grow equally */
-    min-width: 150px; /* Ensures a minimum width for each block */
-    margin: 15px 0; /* Adds vertical margin */
+  flex: 1; /* Allows each input block to grow equally */
+  min-width: 150px; /* Ensures a minimum width for each block */
+  margin: 15px 0; /* Adds vertical margin */
 }
 .select-box {
-    border-radius: 10px;
-    padding: 18px;
-    color:#888888;
-    border: 2px solid #888888;
-    background-color: #f9f9f9;
-    appearance: none; /* Removes default styling for a custom look */
-    width: 100%; /* Ensures the select box fills the container's width */
+  border-radius: 10px;
+  padding: 18px;
+  color: #888888;
+  border: 2px solid #888888;
+  background-color: #f9f9f9;
+  appearance: none; /* Removes default styling for a custom look */
+  width: 100%; /* Ensures the select box fills the container's width */
 }
 .select-box:focus {
-    border-color: #0A0707; /* Changes border color on focus */
-    outline: none; /* Removes default outline */
+  border-color: #0a0707; /* Changes border color on focus */
+  outline: none; /* Removes default outline */
 }
 .select-box option {
-    color:#0A0707;
+  color: #0a0707;
 }
 #dob {
-    color:#888888;
+  color: #888888;
 }
 .left-button,
 .right-button {
-    width: 45%;
-    font-size: 18px;
-    cursor: pointer;
-    padding: 10px 0;
-    border-radius: 10px;
-    border: none; /* Remove the default border */
-    color: #0A0707;
-    transition: 0.3s ease-in, 0.3s ease-out;
+  width: 45%;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 10px 0;
+  border-radius: 10px;
+  border: none; /* Remove the default border */
+  color: #0a0707;
+  transition: 0.3s ease-in, 0.3s ease-out;
 }
 
 .left-button {
-    margin-left: 10px;
-    float: left;
-    background-color: plum;
+  margin-left: 10px;
+  float: left;
+  background-color: plum;
 }
 
 .right-button {
-    margin-right: 10px;
-    float: right;
-    background-color: lightblue;
+  margin-right: 10px;
+  float: right;
+  background-color: lightblue;
 }
 
 .left-button:hover {
-    background-color: rgb(245, 125, 245);
+  background-color: rgb(245, 125, 245);
 }
 
 .right-button:hover {
-    background-color: rgb(84, 196, 233);
+  background-color: rgb(84, 196, 233);
 }
 
 .input-block textarea,
 .input-block input[type="email"],
 input,
 select {
-    width: 100%; /* Ensures the input/textarea fills the block's width */
-    padding: 10px; /* Adds padding for better usability */
-    font-size: 16px; /* Ensures the text is readable */
-    border: 2px solid #888888; /* Adds a subtle border */
-    border-radius: 10px; /* Rounds the corners */
-    box-sizing: border-box; /* Includes padding in the element's total width */
+  width: 100%; /* Ensures the input/textarea fills the block's width */
+  padding: 10px; /* Adds padding for better usability */
+  font-size: 16px; /* Ensures the text is readable */
+  border: 2px solid #888888; /* Adds a subtle border */
+  border-radius: 10px; /* Rounds the corners */
+  box-sizing: border-box; /* Includes padding in the element's total width */
 }
 
 .input-block textarea {
-    resize: vertical; /* Allows vertical resizing of the textarea */
+  resize: vertical; /* Allows vertical resizing of the textarea */
 }
 
 .input-block textarea:focus,
 .input-block input[type="email"]:focus,
 input:focus,
 select:focus {
-    border-color: #0A0707; /* Changes border color on focus */
-    outline: none; /* Removes default outline */
+  border-color: #0a0707; /* Changes border color on focus */
+  outline: none; /* Removes default outline */
 }
 
 label {
-    display: block; /* Ensures the label takes up the full width and stacks above the input */
-    margin: 10px 0 5px 10px; /* Adds space between the label and the input */
-    font-size: 18px;
-    color: #0A0707;
+  display: block; /* Ensures the label takes up the full width and stacks above the input */
+  margin: 10px 0 5px 10px; /* Adds space between the label and the input */
+  font-size: 18px;
+  color: #0a0707;
 }
 
 legend {
-    font-size: 18px;
-    margin: 0 0 10px 10px;
+  font-size: 18px;
+  margin: 0 0 10px 10px;
 }
 
 fieldset {
-    border-radius: 15px;
-    border: 2px solid #888888;
+  border-radius: 15px;
+  border: 2px solid #888888;
 }
 /* End of APPLICATION */
 
 /* Manage */
 .dashboard-header {
-    display: flex; /* Use flexbox for centering */
-    flex-direction: column; /* Stack children vertically */
-    align-items: center; /* Center children horizontally */
-    justify-content: center; /* Center children vertically */
-    color: #F0F0F0;
-    font-size: 24px;
-    text-align: center; /* Center text within the element */
-    margin-top: 70px;
-    margin-bottom: 30px;
+  display: flex; /* Use flexbox for centering */
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center children horizontally */
+  justify-content: center; /* Center children vertically */
+  color: #f0f0f0;
+  font-size: 24px;
+  text-align: center; /* Center text within the element */
+  margin-top: 70px;
+  margin-bottom: 30px;
 }
 .db_manipulation {
-    padding: 25px;
-    width: 400px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    color: #0A0707;
-    background-color: #dadada;
+  padding: 25px;
+  width: 400px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  color: #0a0707;
+  background-color: #dadada;
 }
 .db_manipulation .search-button,
 .db_manipulation .confirm-button {
-    width: 100%;
-    cursor: pointer;
-    font-size: 18px;
-    transition: 0.3s ease-in, 0.3s ease-out;
+  width: 100%;
+  cursor: pointer;
+  font-size: 18px;
+  transition: 0.3s ease-in, 0.3s ease-out;
 }
 .db_manipulation .search-button {
-    margin-top: 10px;
-    background-color: lightblue;
+  margin-top: 10px;
+  background-color: lightblue;
 }
 .db_manipulation .search-button:hover {
-    background-color: plum;
+  background-color: plum;
 }
 .db_manipulation .confirm-button {
-    margin-top: 10px;
-    background-color: orange;
+  margin-top: 10px;
+  background-color: orange;
 }
 .db_manipulation .confirm-button:hover {
-    background-color: orangered;
+  background-color: orangered;
+}
+.db_manipulation .add-job-redirect {
+  margin-bottom: 10px;
+}
+.db_manipulation .add-job-button {
+  width: 100%;
+  cursor: pointer;
+  font-size: 18px;
+  transition: 0.3s ease-in, 0.3s ease-out;
+}
+.db_manipulation .add-job-button {
+  background-color: lightblue;
+}
+.db_manipulation .add-job-button:hover {
+  background-color: plum;
 }
 /* End of Manage */
 
-
 /* FOOTER */
 .login-wrapper {
-    margin: 100px auto 100px auto;
-    padding: 25px;
-    width: 400px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    color: #0A0707;
-    background-color: #dadada;
+  margin: 100px auto 100px auto;
+  padding: 25px;
+  width: 400px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  color: #0a0707;
+  background-color: #dadada;
 }
 .login-wrapper .login-title {
-    text-align: center;
+  text-align: center;
 }
 
 .login-wrapper .login-button {
-    width: 100%;
-    cursor: pointer;
-    font-size: 18px;
-    margin-top: 10px;
-    background-color: lightblue;
-    transition: 0.3s ease-in, 0.3s ease-out;
+  width: 100%;
+  cursor: pointer;
+  font-size: 18px;
+  margin-top: 10px;
+  background-color: lightblue;
+  transition: 0.3s ease-in, 0.3s ease-out;
 }
 .login-wrapper .login-button:hover {
-    background-color: plum;
+  background-color: plum;
 }
 .register-link {
-    font-size: 18px;
-    color: #0A0707;
-    transition: 0.3s ease-in, 0.3s ease-out;
+  font-size: 18px;
+  color: #0a0707;
+  transition: 0.3s ease-in, 0.3s ease-out;
 }
 .register-link:hover {
-    color: #888888;
+  color: #888888;
 }
 /* End of FOOTER */
 
-
 /* FOOTER */
 .footer {
-    display: flex;
-    justify-content: center;
-    width: 100%;
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 .footer .footer-content {
-    width: 90%;
-    background-color: #0A0707;
-    color: #F0F0F0;
-    padding: 20px 0 20px 0;
-    margin-top: 50px;
-    border-top: 2px solid #2e2e2e;
+  width: 90%;
+  background-color: #0a0707;
+  color: #f0f0f0;
+  padding: 20px 0 20px 0;
+  margin-top: 50px;
+  border-top: 2px solid #2e2e2e;
 }
 
 .footer .links {
-    width: 30%;
-    display: flex;
-    gap: 25px; /* Add a 20px gap between child elements */
-    margin: 10px auto 50px auto; /* Center child elements horizontally */
-    justify-content: center; /* Center child elements horizontally */
+  width: 30%;
+  display: flex;
+  gap: 25px; /* Add a 20px gap between child elements */
+  margin: 10px auto 50px auto; /* Center child elements horizontally */
+  justify-content: center; /* Center child elements horizontally */
 }
 
 .footer .links .pricing,
@@ -769,92 +782,92 @@ fieldset {
 .footer .links .term,
 .footer .links .github,
 .footer .links .jira {
-    color: #888888;
-    text-decoration: none;
-    cursor: pointer;
-    transition: 0.3s ease-in, 0.3s ease-out;
+  color: #888888;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.3s ease-in, 0.3s ease-out;
 }
 .footer .links .pricing:hover,
 .footer .links .careers:hover,
 .footer .links .term:hover,
 .footer .links .github:hover,
 .footer .links .jira:hover {
-    color: #FFFFFF;
-    text-decoration: none;
-    cursor: pointer;
+  color: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
 }
 .copyright {
-    text-align: center;
+  text-align: center;
 }
 /* End of FOOTER */
 
-
 /* TABLE */
 table {
-    width: 100%;
-    border-collapse: separate; /* Use separate to allow border-radius */
-    border-spacing: 0; /* Remove spacing between cells */
-    border-radius: 15px; /* Round the corners of the table */
-    margin: 70px 0 70px 0;
-    color: #888888;
-    box-shadow: 0 0 10px rgba(155, 95, 235, 0.1);
-    overflow: hidden; /* Ensure rounded corners are visible */
-    
+  width: 100%;
+  border-collapse: separate; /* Use separate to allow border-radius */
+  border-spacing: 0; /* Remove spacing between cells */
+  border-radius: 15px; /* Round the corners of the table */
+  margin: 70px 0 70px 0;
+  color: #888888;
+  box-shadow: 0 0 10px rgba(155, 95, 235, 0.1);
+  overflow: hidden; /* Ensure rounded corners are visible */
 }
 th {
-    background-color: #171717;
-    color: #f0f0f0b9;
-    padding: 12px;
+  background-color: #171717;
+  color: #f0f0f0b9;
+  padding: 12px;
 }
 td {
-    background-color: #292929;
+  background-color: #292929;
 }
 li {
-    padding: 5px;
+  padding: 5px;
 }
-th, td, li {
-    transition: 0.3s ease-in, 0.3s ease-out;
+th,
+td,
+li {
+  transition: 0.3s ease-in, 0.3s ease-out;
 }
-th:hover, .interests-table td:hover, li:hover {
-    color: #F0F0F0; /* Change text color on hover */
+th:hover,
+.interests-table td:hover,
+li:hover {
+  color: #f0f0f0; /* Change text color on hover */
 }
-.general-info-table{
-    width: 90%;
+.general-info-table {
+  width: 90%;
 }
 .interests-table th,
 .interests-table td {
-    padding: 12px;
-    text-align: left;
+  padding: 12px;
+  text-align: left;
 }
 
 caption {
-    margin-bottom: 50px;
-    color: #F0F0F0;
+  margin-bottom: 50px;
+  color: #f0f0f0;
 }
 /* End of TABLE */
 
-
 /* SECTION */
 section {
-    margin: 20px;
+  margin: 20px;
 }
 /* End of SECTION */
 
-
 /* ASIDE */
 .update-section {
-    display: flex;
-    width: 90%;
-    justify-content: end;
+  display: flex;
+  width: 90%;
+  justify-content: end;
 }
 
 aside {
-    float: right;
-    width: 25%; /* Set a width for the aside */
-    color: #888888;
-    margin: -10px;
-    padding-right: 10px;
-    text-align: right; /* Aligns text within the aside to the right */
-    border-right: 2px solid #888888;
+  float: right;
+  width: 25%; /* Set a width for the aside */
+  color: #888888;
+  margin: -10px;
+  padding-right: 10px;
+  text-align: right; /* Aligns text within the aside to the right */
+  border-right: 2px solid #888888;
 }
 /* End of ASIDE */
