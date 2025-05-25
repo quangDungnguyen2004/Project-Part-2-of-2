@@ -195,7 +195,8 @@ $createPeopleTable = "CREATE TABLE IF NOT EXISTS people (
         Email VARCHAR(100) NOT NULL,
         Phone VARCHAR(15) NOT NULL CHECK (Phone REGEXP '^[0-9 ]{8,12}$'),
         OtherSkills TEXT,
-        Status ENUM('New', 'Current', 'Final') DEFAULT 'New'
+        Status ENUM('New', 'Current', 'Final') DEFAULT 'New',
+        FOREIGN KEY (JobRefNumber) REFERENCES jobs(JobRefNumber) ON DELETE CASCADE
     )";
 
 // Pre-defined skills to be inserted

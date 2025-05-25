@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 22, 2025 at 12:36 PM
+-- Generation Time: May 25, 2025 at 07:26 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -48,6 +48,38 @@ INSERT INTO `jobs` (`JobRefNumber`, `JobTitle`, `Location`, `JobDesc`, `Salary`,
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `people`
+--
+
+CREATE TABLE `people` (
+  `EOInumber` int(11) NOT NULL,
+  `JobRefNumber` varchar(20) NOT NULL,
+  `FirstName` varchar(20) NOT NULL CHECK (`FirstName` regexp '^[A-Za-z]{1,20}$'),
+  `LastName` varchar(20) NOT NULL CHECK (`LastName` regexp '^[A-Za-z]{1,20}$'),
+  `StreetAddress` varchar(40) NOT NULL,
+  `Suburb` varchar(40) NOT NULL,
+  `State` enum('VIC','NSW','QLD','NT','WA','SA','TAS','ACT') NOT NULL,
+  `Postcode` char(4) NOT NULL CHECK (`Postcode` regexp '^[0-9]{4}$'),
+  `Email` varchar(100) NOT NULL,
+  `Phone` varchar(15) NOT NULL CHECK (`Phone` regexp '^[0-9 ]{8,12}$'),
+  `OtherSkills` text DEFAULT NULL,
+  `Status` enum('New','Current','Final') DEFAULT 'New'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `people_skills`
+--
+
+CREATE TABLE `people_skills` (
+  `EOInumber` int(11) NOT NULL,
+  `SkillID` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `requirements`
 --
 
@@ -73,6 +105,48 @@ INSERT INTO `requirements` (`ReqID`, `Req`, `JobRefNumber`) VALUES
 (9, 'Experience with cloud platforms (AWS, GCP, or Azure)', 'FT102'),
 (10, 'Knowledge of real-time data processing', 'FT102');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `skills`
+--
+
+CREATE TABLE `skills` (
+  `SkillID` int(11) NOT NULL,
+  `SkillName` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `skills`
+--
+
+INSERT INTO `skills` (`SkillID`, `SkillName`) VALUES
+(5, 'C++'),
+(4, 'Java'),
+(3, 'Julia'),
+(1, 'Python'),
+(2, 'R');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `username` varchar(20) NOT NULL,
+  `password_hash` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `password_hash`, `created_at`) VALUES
+(1, 'admin', 'admin1', '2025-05-25 05:25:55');
+
 --
 -- Indexes for dumped tables
 --
@@ -84,6 +158,20 @@ ALTER TABLE `jobs`
   ADD PRIMARY KEY (`JobRefNumber`);
 
 --
+-- Indexes for table `people`
+--
+ALTER TABLE `people`
+  ADD PRIMARY KEY (`EOInumber`),
+  ADD KEY `people_ibfk_1` (`JobRefNumber`);
+
+--
+-- Indexes for table `people_skills`
+--
+ALTER TABLE `people_skills`
+  ADD PRIMARY KEY (`EOInumber`,`SkillID`),
+  ADD KEY `SkillID` (`SkillID`);
+
+--
 -- Indexes for table `requirements`
 --
 ALTER TABLE `requirements`
@@ -91,18 +179,63 @@ ALTER TABLE `requirements`
   ADD KEY `JobRefNumber` (`JobRefNumber`);
 
 --
+-- Indexes for table `skills`
+--
+ALTER TABLE `skills`
+  ADD PRIMARY KEY (`SkillID`),
+  ADD UNIQUE KEY `SkillName` (`SkillName`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `username` (`username`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `people`
+--
+ALTER TABLE `people`
+  MODIFY `EOInumber` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `requirements`
 --
 ALTER TABLE `requirements`
-  MODIFY `ReqID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `ReqID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT for table `skills`
+--
+ALTER TABLE `skills`
+  MODIFY `SkillID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `people`
+--
+ALTER TABLE `people`
+  ADD CONSTRAINT `people_ibfk_1` FOREIGN KEY (`JobRefNumber`) REFERENCES `jobs` (`JobRefNumber`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `people_skills`
+--
+ALTER TABLE `people_skills`
+  ADD CONSTRAINT `people_skills_ibfk_1` FOREIGN KEY (`EOInumber`) REFERENCES `people` (`EOInumber`) ON DELETE CASCADE,
+  ADD CONSTRAINT `people_skills_ibfk_2` FOREIGN KEY (`SkillID`) REFERENCES `skills` (`SkillID`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `requirements`
