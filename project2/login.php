@@ -1,21 +1,31 @@
-
 <?php
-// Initialize session for potential future use (e.g., user tracking)
 session_start();
 
-// Enable full error reporting for development/debugging
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-// Include database connection settings
 require_once("settings.php");
 
-// Initialize variables for feedback
 $errors = [];
 $success = false;
 
-// Handle form submission
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+// --- Lockout configuration ---
+define('MAX_ATTEMPTS', 3);
+define('LOCKOUT_TIME', 300); // seconds (5 minutes)
+
+// Initialize lockout tracking in session
+if (!isset($_SESSION['login_attempts'])) {
+    $_SESSION['login_attempts'] = 0;
+}
+if (!isset($_SESSION['lockout_until'])) {
+    $_SESSION['lockout_until'] = 0;
+}
+
+// Check if currently locked out
+$now = time();
+$locked_out = ($_SESSION['lockout_until'] > $now);
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && !$locked_out) {
     $username = isset($_POST['username']) ? trim($_POST['username']) : '';
     $password = isset($_POST['password']) ? $_POST['password'] : '';
 
@@ -28,7 +38,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     if (empty($errors)) {
-        // Fetch user from database
         $stmt = $conn->prepare("SELECT password_hash FROM users WHERE username = ?");
         $stmt->bind_param("s", $username);
         $stmt->execute();
@@ -38,20 +47,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmt->bind_result($password_hash);
             $stmt->fetch();
 
-            // Verify password
             if (password_verify($password, $password_hash)) {
                 $success = true;
                 $_SESSION['username'] = $username;
-                // Redirect or show success message
+                $_SESSION['login_attempts'] = 0; // Reset attempts on success
+                $_SESSION['lockout_until'] = 0;
+                // Optionally redirect here
                 // header("Location: dashboard.php"); exit();
             } else {
+                $_SESSION['login_attempts'] += 1;
                 $errors[] = "Incorrect password.";
             }
         } else {
+            $_SESSION['login_attempts'] += 1;
             $errors[] = "Username not found.";
         }
         $stmt->close();
+
+        // Check if lockout should be triggered
+        if ($_SESSION['login_attempts'] >= MAX_ATTEMPTS) {
+            $_SESSION['lockout_until'] = $now + LOCKOUT_TIME;
+            $locked_out = true;
+        }
     }
+} elseif ($locked_out && $_SERVER['REQUEST_METHOD'] === 'POST') {
+    $errors[] = "Too many failed login attempts. Please try again after " . ceil(($_SESSION['lockout_until'] - $now) / 60) . " minutes.";
 }
 ?>
 
@@ -74,37 +94,54 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="error-message">
                 <ul>
                     <?php foreach ($errors as $err): ?>
-                        <li><?= htmlspecialchars($err) ?></li>
+                        <li>
+                            <?= htmlspecialchars($err) ?>
+                        </li>
                     <?php endforeach; ?>
                 </ul>
             </div>
         <?php elseif ($success): ?>
             <div class="success-message">
-                Login successful! Welcome, <?= htmlspecialchars($username) ?>.
-                <!-- Optionally redirect after a short delay -->
+                Login successful! Welcome,
+                <?= htmlspecialchars($username) ?>.
                 <meta http-equiv="refresh" content="2;url=index.php">
             </div>
         <?php endif; ?>
-        <?php if (!$success): ?>
-        <form method="post">
-            <fieldset>
-                <div>
-                    <label for="username">Username:</label>
-                    <input type="text" id="username" name="username" maxlength="20" pattern="^[A-Za-z]{1,20}$"
-                        placeholder="Type here..." autocomplete="username" required
-                        title="Username must contain only letters (A-Z), max 20 characters."
-                        value="<?= isset($username) ? htmlspecialchars($username) : '' ?>">
-                </div>
-                <div>
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" name="password" maxlength="20" pattern="^[A-Za-z0-9]{1,20}$"
-                        placeholder="Type here..." autocomplete="current-password" required
-                        title="Password must contain only letters (A-Z) and numbers (0-9), max 20 characters.">
-                </div>
-                <input class="login-button" type="submit" value="Login"></input>
-                <a href="register.php" class="register-link">Not a member? Register here</a>
-            </fieldset>
-        </form>
+
+        <?php if ($locked_out): ?>
+            <div class="error-message">
+                Too many failed login attempts. Please try again after
+                <?= ceil(($_SESSION['lockout_until'] - $now) / 60) ?> minute(s).
+            </div>
+        <?php endif; ?>
+
+        <?php if (!$success && !$locked_out): ?>
+            <form method="post">
+                <fieldset>
+                    <div>
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" maxlength="20" pattern="^[A-Za-z]{1,20}$"
+                            placeholder="Type here..." autocomplete="username" required
+                            title="Username must contain only letters (A-Z), max 20 characters."
+                            value="<?= isset($username) ? htmlspecialchars($username) : '' ?>">
+                    </div>
+                    <div>
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" maxlength="20" pattern="^[A-Za-z0-9]{1,20}$"
+                            placeholder="Type here..." autocomplete="current-password" required
+                            title="Password must contain only letters (A-Z) and numbers (0-9), max 20 characters.">
+                    </div>
+                    <input class="login-button" type="submit" value="Login"></input>
+                    <a href="register.php" class="register-link">Not a member? Register here</a>
+                </fieldset>
+            </form>
+            <div style="margin-top:10px; color:#555;">
+                <?php if ($_SESSION['login_attempts'] > 0): ?>
+                    Failed attempts:
+                    <?= $_SESSION['login_attempts'] ?> /
+                    <?= MAX_ATTEMPTS ?>
+                <?php endif; ?>
+            </div>
         <?php endif; ?>
     </div>
     <?php include "footer.inc"; ?>
