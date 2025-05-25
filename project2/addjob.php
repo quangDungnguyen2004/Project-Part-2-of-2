@@ -44,7 +44,7 @@ require_once("settings.php");
                         title="Reference number should be two letter follow up by 4 to 9 numbers." required>
                     <div class="input-block">
                         <!-- job title -->
-                        <label for="job_title">Email</label>
+                        <label for="job_title">Job Title</label>
                         <input type="text" id="job_title" name="job_title" placeholder="Enter the job title" required>
                     </div>
                     <div class="input-block">

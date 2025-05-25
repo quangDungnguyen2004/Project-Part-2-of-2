@@ -23,10 +23,22 @@
                     <label for="refnum">Reference Number</label>
                     <select class="select-box" name="reference_number" id="refnum" required>
                         <option value="" selected disabled>Select Reference ID</option>
-                        <option value="FT102">FT102</option>
-                        <option value="FT104">FT104</option>
-                        <option value="FT105">FT105</option>
-                        <option value="FT105">FT106</option>
+                        <?php 
+                            session_start();
+        
+                            error_reporting(E_ALL);
+                            ini_set('display_errors', 1);
+                            require_once("settings.php");
+                            $queryJob = "SELECT JobRefNumber FROM jobs";
+
+                            $jobs = mysqli_query($conn, $queryJob);
+                            
+                            if ($jobs->num_rows > 0) {
+                                while($row = $jobs->fetch_assoc()){
+                                    echo "<option value=".$row['JobRefNumber'].">".$row['JobRefNumber']."</option>";
+                                }
+                            }
+                        ?>
                     </select>
                 </div>
                 <div class="input-row">
