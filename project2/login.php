@@ -78,16 +78,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !$locked_out) {
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono&display=swap" rel="stylesheet">
-    <title>Manage</title>
-</head>
+<?php include "header.inc"; ?>
 
 <body>
-    <?php include "header.inc"; ?>
+    <?php include "nav.inc"; ?>
     <div class="login-wrapper">
         <h1 class="login-title">Login</h1>
         <?php if (!empty($errors)): ?>

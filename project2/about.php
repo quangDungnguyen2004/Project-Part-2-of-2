@@ -8,24 +8,20 @@ ini_set('display_errors', 1);
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono&display=swap" rel="stylesheet">
-    <title>About Page</title>
-</head>
+<?php
+    include "header.inc";
+?>
 
 <body>
     <?php
-    include "header.inc";
+    include "nav.inc";
     ?>
     <main class="main">
         <div class="top-part">
             <div class="product-purpose2">
                 <h1>About.</h1>
             </div>
-            <img id="top-image" src="../images/pinktree.png" alt="tree image">
+            <img id="top-image" src="images/pinktree.png" alt="tree image">
             <div class="product-purpose3">
                 <h1>Invent what's next—responsibly.</h1>
                 <p class="after-purpose-text1">We're building AI that elevates people and society, and we're looking for
@@ -43,7 +39,7 @@ ini_set('display_errors', 1);
                 </div>
                 <div class="our-team-top-wrapper">
                     <figure>
-                        <img class="rounded-image" src="../images/groupimage.png" alt="Group Photo" width="300">
+                        <img class="rounded-image" src="images/groupimage.png" alt="Group Photo" width="300">
                     </figure>
                     <p>Greeting. We are Earthling. Below are information regarding our group</p>
                 </div>

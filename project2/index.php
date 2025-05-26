@@ -1,21 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono&display=swap" rel="stylesheet">
-    <title>Home Page</title>
-</head>
-
+<?php
+    include "header.inc";
+    ?>
 <body>
     <?php
-    include "header.inc";
+    include "nav.inc";
     ?>
     <main class="main">
         <div class="top-part">
-            <img id="top-image" src="../images/topportion.png" alt="sky image">
+            <img id="top-image" src="images/topportion.png" alt="sky image">
             <div class="product-purpose">
                 <h1>The AI Tool To Expand Your Creativity</h1>
                 <p>Design to improve you productivity</p>
@@ -26,19 +21,19 @@
                 <p class="image-title">It's a <span id="partner">partner</span> who always stands by your side on
                     creative projects, from initial brainstorming to final editing.</p>
                 <p class="image-title"><span id="indent">::</span> Earthling-1.a offer extensive reasoning and creative suggestions.</p>
-                <img class="overview-images" src="../images/storyprompt.png" alt="Story Prompt">
+                <img class="overview-images" src="images/storyprompt.png" alt="Story Prompt">
             </div>
             <div>
                 <p class="image-title">A <span id="tutor">tutor</span> who helps you turn your own ideas into working
                     code.</p>
                 <p class="image-title"><span id="indent">::</span> Earthling-1.a can write code in various programming languages.</p>
-                <img class="overview-images" src="../images/codeprompt.png" alt="Code Prompt">
+                <img class="overview-images" src="images/codeprompt.png" alt="Code Prompt">
             </div>
             <div>
                 <p class="image-title">Whether you have a simple idea or a detailed description, it can create an image
                     to match your needs.</p>
                 <p class="image-title"><span id="indent">::</span> Earthling-1.I can generate images based on your text.</p>
-                <img class="overview-images" src="../images/imageprompt.png" alt="Image Prompt">
+                <img class="overview-images" src="images/imageprompt.png" alt="Image Prompt">
             </div>
             <div class="see-more">Explore more</div>
         </div>
@@ -48,12 +43,12 @@
             </div>
             <div class="news">
                 <div class="left-news">
-                    <img id="research-left" src="../images/bluepallete.png" alt="Left News Image">
+                    <img id="research-left" src="images/bluepallete.png" alt="Left News Image">
                     <div class="image-label">Introducing the XXXXX benchmark</div>
                     <div class="image-date">Jan 24, 2025</div>
                 </div>
                 <div class="right-news">
-                    <img id="research-right" src="../images/flower.png" alt="Right News Image">
+                    <img id="research-right" src="images/flower.png" alt="Right News Image">
                     <div class="image-label">Introducing the YYYYY model</div>
                     <div class="image-date">Mar 11, 2025</div>
                 </div>
