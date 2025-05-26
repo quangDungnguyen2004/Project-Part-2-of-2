@@ -19,9 +19,9 @@ require_once("settings.php");
 <!DOCTYPE html>
 <html lang="en">
 
-    <?php
-    include "header.inc";
-    ?>
+<?php
+include "header.inc";
+?>
 
 <body>
     <?php
@@ -29,15 +29,15 @@ require_once("settings.php");
     ?>
     <main class="main">
         <div class="form-wrapper">
-            <form class="application-form" action="processjob.php" method="post" novalidate="novalidate">
+            <form class="application-form" action="processjob.php" method="post">
                 <h2 class="form-title">New Job Page</h2>
                 <p class="under-form-title">Application form for HR Manager</p>
                 <div class="input-block">
                     <!-- Job reference number -->
                     <label for="refnum">Reference Number</label>
-                    <input type="text" id="refnum" name="reference_number" maxlength="11"
-                        pattern="/^[A-Z]{2}[0-9]{4,9}/" placeholder="Enter Reference Number"
-                        title="Reference number should be two letter follow up by 4 to 9 numbers." required>
+                    <input type="text" id="refnum" name="reference_number" maxlength="11" pattern="[A-Z]{2}[0-9]{4,9}"
+                        placeholder="Enter Reference Number"
+                        title="Reference number should be two letters followed by 4 to 9 numbers." required>
                     <div class="input-block">
                         <!-- job title -->
                         <label for="job_title">Job Title</label>
