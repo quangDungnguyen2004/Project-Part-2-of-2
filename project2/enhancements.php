@@ -37,6 +37,15 @@
             tables
             in <code>manage.php</code> to display each person’s skills.</li>
     </ul>
+    <h2>Dung Enhancements</h2>
+    <ul>
+        <li>Allow Manager to add a new job into the job list
+            <code>addjob.php</code> page.
+        </li>
+        <li>Process the job and add to the database <code>processjob.php</code>.</li>
+        <li>Job list in <code>apply.php</code> now include both the new job and old jobs</li>
+        <li>Creating a table for both jobs and requirements and connect them using one to many relationship. Normalize the data to at least 1NF.</li>
+    </ul>
     <?php
     include "footer.inc";
     ?>
