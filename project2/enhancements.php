@@ -46,6 +46,13 @@
         <li>Job list in <code>apply.php</code> now include both the new job and old jobs</li>
         <li>Creating a table for both jobs and requirements and connect them using one to many relationship. Normalize the data to at least 1NF.</li>
     </ul>
+    <h2>Hien Enhancements</h2>
+    <ul>
+             <li>Allows users to review the data they entered in the previous form, and allows them to return to the form to edit information 
+                 or agree to submit the form data one last time. <code>confirmation.php</code>   </li>
+             <li>Secure user information by ensuring that users can only view the confirmation page through form submission 
+                 and not through other sources such as URL links. <code>confirmation.php</code>   </li>   
+    </ul>
     <?php
     include "footer.inc";
     ?>
