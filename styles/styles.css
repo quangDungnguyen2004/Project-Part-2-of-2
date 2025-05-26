@@ -131,6 +131,11 @@ body {
   transform: rotate(45deg); /* Rotate the image 90 degrees on hover */
 }
 
+.login-menu {
+  display: block;
+  position: relative; /* Position relative to contain the dropdown */
+}
+
 .dropdown-content {
   opacity: 0; /* Initially invisible */
   visibility: hidden; /* Initially hidden */
@@ -168,6 +173,10 @@ body {
 }
 
 .hidden-menu:hover .dropdown-content {
+  opacity: 1; /* Make visible */
+  visibility: visible; /* Ensure visibility */
+}
+.login-menu:hover .dropdown-content {
   opacity: 1; /* Make visible */
   visibility: visible; /* Ensure visibility */
 }
@@ -281,8 +290,8 @@ input:invalid:not(:placeholder-shown) {
 }
 
 .main .overview .image-title {
-  padding-top: 70px;
-  padding-bottom: 40px;
+  padding-top: 1em;
+  padding-bottom: 1em;
   text-align: center;
   font-size: 24px;
 }
@@ -295,6 +304,9 @@ input:invalid:not(:placeholder-shown) {
   color: plum;
 }
 
+#indent {
+  color: orange;
+}
 .main .mid-part {
   display: flex;
   flex-direction: column;

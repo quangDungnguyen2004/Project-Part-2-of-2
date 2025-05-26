@@ -101,7 +101,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !$locked_out) {
                 </ul>
             </div>
         <?php elseif ($success): ?>
-            <div class="success-message">
+            <div class="success-message"
+                style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
                 Login successful! Welcome,
                 <?= htmlspecialchars($username) ?>.
                 <meta http-equiv="refresh" content="2;url=index.php">

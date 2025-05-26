@@ -25,19 +25,22 @@
             <div>
                 <p class="image-title">It's a <span id="partner">partner</span> who always stands by your side on
                     creative projects, from initial brainstorming to final editing.</p>
+                <p class="image-title"><span id="indent">::</span> Earthling-1.a offer extensive reasoning and creative suggestions.</p>
                 <img class="overview-images" src="../images/storyprompt.png" alt="Story Prompt">
             </div>
             <div>
                 <p class="image-title">A <span id="tutor">tutor</span> who helps you turn your own ideas into working
                     code.</p>
+                <p class="image-title"><span id="indent">::</span> Earthling-1.a can write code in various programming languages.</p>
                 <img class="overview-images" src="../images/codeprompt.png" alt="Code Prompt">
             </div>
             <div>
                 <p class="image-title">Whether you have a simple idea or a detailed description, it can create an image
                     to match your needs.</p>
+                <p class="image-title"><span id="indent">::</span> Earthling-1.I can generate images based on your text.</p>
                 <img class="overview-images" src="../images/imageprompt.png" alt="Image Prompt">
             </div>
-            <div class="see-more">Explore more features of Earthling AI</div>
+            <div class="see-more">Explore more</div>
         </div>
         <div class="mid-part">
             <div class="research">
