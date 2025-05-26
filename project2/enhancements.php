@@ -1,11 +1,45 @@
-Provide the manager with the ability to select the field on which to sort the order in
-which the EOI records are displayed.
+<!DOCTYPE html>
+<html lang="en">
 
-Create a manager registration page with server side validation requiring unique
-username and a password rule, and store this information in a table. As well as login page
-for the manager to access the system by checking username and password. 
-The manager should be able to add, edit and delete data.
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono&display=swap" rel="stylesheet">
+    <title>Home Page</title>
+</head>
 
-Access to the web site disabled for user a period of time on three
-invalid login attempts.
+<body>
+    <?php
+    include "header.inc";
+    ?>
+    <h2>Tri Enhancements</h2>
+    <ul>
+        <li>Allow managers to choose which field to use for sorting EOI records in the display order on the
+            <code>manage.php</code> page.
+        </li>
+        <li>Enable managers to modify and remove data entries within <code>manage.php</code>.</li>
+        <li>Implement a manager registration page (<code>register.php</code>) that uses server-side validation to ensure
+            usernames are unique and passwords meet specific criteria, saving this data in a dedicated table.</li>
+        <li>Develop a login page (<code>login.php</code>) for managers, verifying credentials against stored usernames
+            and
+            passwords.</li>
+        <li>Restrict website access for a set period after three consecutive failed login attempts
+            (<code>login.php</code>).
+        </li>
+        <li>Display the user profile image in the top navigation bar when logged in, and show a dropdown menu with
+            "Manage"
+            and "Logout" options when the profile picture is tapped.</li>
+        <li>Use prepared statements in <code>login.php</code>, <code>register.php</code>, and
+            <code>process_eoi.php</code>
+            to enhance security.</li>
+        <li>Normalize the database by creating separate tables for people, skills, and people_skills, and join these
+            tables
+            in <code>manage.php</code> to display each person’s skills.</li>
+    </ul>
+    <?php
+    include "footer.inc";
+    ?>
+</body>
 
+</html>
